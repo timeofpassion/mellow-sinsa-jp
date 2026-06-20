@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>メロウクリニック新沙院｜韓国・皮膚科専門医 ソン・チャンファ院長による肌管理</title>
+<meta name="description" content="韓国で肌管理するなら皮膚科専門医一択。韓国上位1.5%の皮膚科専門医ソン・チャンファ院長が、カウンセリングから施術まで一貫して担当。新沙駅徒歩3分・日本語対応。" />
+<meta property="og:title" content="韓国で肌管理するなら？皮膚科専門医一択。" />
+<meta property="og:description" content="韓国上位1.5%の皮膚科専門医が、カウンセリングから施術まで一貫して担当します。" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="ja_JP" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,300..500&family=Shippori+Mincho:wght@500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --greige:#E7DFD4;--greige-deep:#DCD0C0;--cream:#F5EFE6;--paper:#FBF7F1;
+    --ink:#2E2722;--taupe:#7C7064;--rose:#B5877E;--rose-deep:#9C6A60;--rust:#9C5840;
+    --hair:#D6C9B8;--hair-soft:#E4DACB;--line-green:#06C755;--gold:#C2A06B;
+    --shadow:0 30px 70px -38px rgba(58,40,30,.5);--shadow-sm:0 16px 44px -28px rgba(58,40,30,.55);
+    --jp:"Shippori Mincho",serif;--lat:"Fraunces",serif;
+    --sans:"Noto Sans JP","Pretendard Variable",-apple-system,BlinkMacSystemFont,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--sans);color:var(--ink);background:var(--greige);line-height:1.9;-webkit-font-smoothing:antialiased;letter-spacing:.012em;overflow-x:hidden;}
+  img{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  ::selection{background:var(--rose);color:#fff;}
+  .grain{position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.05;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+  .ovl{font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.42em;text-transform:uppercase;color:var(--rose-deep);}
+  .lat-it{font-family:var(--lat);font-style:italic;font-weight:400;}
+  .num{font-family:var(--lat);font-weight:400;font-variant-numeric:lining-nums;}
+
+  /* header */
+  header{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:22px 34px;transition:all .45s ease;}
+  header.scrolled{background:rgba(231,223,212,.82);backdrop-filter:blur(16px);padding:13px 34px;box-shadow:0 1px 0 rgba(120,95,70,.1);}
+  .brand{display:flex;align-items:baseline;gap:12px;}
+  .brand .logo{font-family:var(--lat);font-size:30px;font-weight:500;letter-spacing:.06em;color:var(--ink);line-height:1;}
+  .brand .div{width:1px;height:16px;background:var(--rose);opacity:.55;}
+  .brand .sub{font-size:10px;letter-spacing:.34em;color:var(--rose-deep);text-transform:uppercase;}
+  .nav-cta{display:inline-flex;align-items:center;gap:8px;background:var(--line-green);color:#fff;font-weight:700;font-size:13.5px;padding:11px 20px;border-radius:2px;transition:transform .25s;box-shadow:0 12px 26px -12px rgba(6,199,85,.7);}
+  .nav-cta:hover{transform:translateY(-2px);}
+  .nav-cta svg{width:17px;height:17px;}
+
+  /* buttons */
+  .btn-line{display:inline-flex;align-items:center;gap:11px;background:var(--line-green);color:#fff;font-weight:700;font-size:15.5px;padding:17px 32px;border-radius:3px;box-shadow:0 18px 34px -16px rgba(6,199,85,.7);transition:transform .25s,box-shadow .25s;}
+  .btn-line:hover{transform:translateY(-3px);box-shadow:0 26px 46px -16px rgba(6,199,85,.8);}
+  .btn-line svg{width:21px;height:21px;}
+  .btn-ghost{display:inline-flex;align-items:center;gap:11px;font-size:14px;font-weight:500;color:var(--ink);letter-spacing:.03em;padding:15px 6px;position:relative;}
+  .btn-ghost::after{content:"";position:absolute;left:6px;right:6px;bottom:8px;height:1px;background:var(--rose);transform:scaleX(.3);transform-origin:left;transition:transform .35s;}
+  .btn-ghost:hover::after{transform:scaleX(1);}
+  .btn-ghost .ar{font-family:var(--lat);font-style:italic;color:var(--rust);}
+
+  /* hero */
+  .hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:128px 0 64px;overflow:hidden;}
+  .hero-bg{position:absolute;inset:0;z-index:0;background:radial-gradient(80% 60% at 85% 12%,#EFE7DA 0,transparent 55%),radial-gradient(70% 55% at 8% 92%,#E0D4C3 0,transparent 52%),var(--greige);}
+  .hero-num{position:absolute;right:28px;top:52%;z-index:2;font-family:var(--lat);font-style:italic;font-size:13px;color:var(--rose);writing-mode:vertical-rl;letter-spacing:.3em;opacity:.7;}
+  .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:54px;align-items:center;width:100%;position:relative;z-index:3;}
+  .hero-eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:30px;}
+  .hero-eyebrow::before{content:"";width:46px;height:1px;background:var(--rose);}
+  .hero h1{font-family:var(--jp);font-weight:600;font-size:clamp(33px,5vw,58px);line-height:1.4;letter-spacing:.01em;color:var(--ink);}
+  .hero h1 em{font-family:var(--lat);font-style:italic;font-weight:400;color:var(--rose-deep);font-size:.92em;}
+  .hero h1 .mk{color:var(--rust);}
+  .hero h1 .u{display:inline-block;position:relative;}
+  .hero h1 .u::after{content:"";position:absolute;left:-2px;right:-2px;bottom:.08em;height:.5em;background:rgba(181,135,126,.22);z-index:-1;}
+  .hero .lead{margin-top:28px;font-size:clamp(14.5px,1.55vw,16.5px);color:var(--taupe);max-width:29em;line-height:2.05;}
+  .hero .actions{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
+  .hero-meta{margin-top:42px;display:flex;border-top:1px solid var(--hair);}
+  .hero-meta .m{padding:20px 26px 0 0;margin-right:26px;border-right:1px solid var(--hair);display:flex;flex-direction:column;gap:4px;}
+  .hero-meta .m:last-child{border-right:none;}
+  .hero-meta .m b{font-family:var(--lat);font-size:25px;font-weight:500;color:var(--rose-deep);line-height:1;}
+  .hero-meta .m b small{font-size:14px;}
+  .hero-meta .m span{font-size:11.5px;color:var(--taupe);letter-spacing:.03em;}
+  .hero-visual{position:relative;}
+  .arch{position:relative;aspect-ratio:25/32;border-radius:50% 50% 6px 6px/32% 32% 6px 6px;overflow:hidden;box-shadow:var(--shadow);}
+  .arch img{width:100%;height:100%;object-fit:cover;}
+  .arch::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(46,39,34,.34));}
+  .arch .cap{position:absolute;left:18px;bottom:18px;z-index:4;display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.94);font-size:10px;letter-spacing:.3em;text-transform:uppercase;}
+  .arch .cap::before{content:"";width:20px;height:1px;background:rgba(255,255,255,.85);}
+  .float{position:absolute;left:-30px;bottom:54px;z-index:6;background:var(--paper);padding:16px 20px;border-radius:3px;box-shadow:var(--shadow-sm);max-width:230px;display:flex;gap:13px;align-items:center;border:1px solid var(--hair-soft);}
+  .float .seal{width:42px;height:42px;flex:none;border-radius:50%;border:1px solid var(--rose);display:flex;align-items:center;justify-content:center;font-family:var(--jp);font-size:12px;color:var(--rose-deep);font-weight:600;}
+  .float p{font-size:12px;line-height:1.65;}
+  .float p b{color:var(--rose-deep);font-weight:700;}
+
+  /* trust badge strip */
+  .badges{background:var(--paper);border-top:1px solid var(--hair-soft);border-bottom:1px solid var(--hair-soft);position:relative;z-index:3;}
+  .badges .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+  .badge{padding:26px 22px;display:flex;align-items:center;gap:14px;border-right:1px solid var(--hair-soft);}
+  .badge:last-child{border-right:none;}
+  .badge .bi{width:38px;height:38px;flex:none;border:1px solid var(--rose);border-radius:50%;display:flex;align-items:center;justify-content:center;}
+  .badge .bi svg{width:18px;height:18px;stroke:var(--rose-deep);fill:none;stroke-width:1.3;}
+  .badge b{display:block;font-family:var(--jp);font-size:14px;color:var(--ink);font-weight:600;line-height:1.4;}
+  .badge span{font-size:11px;color:var(--taupe);letter-spacing:.04em;}
+
+  /* ticker */
+  .ticker{background:var(--ink);color:var(--greige);padding:15px 0;overflow:hidden;position:relative;z-index:3;}
+  .ticker .run{display:flex;white-space:nowrap;width:max-content;animation:run 32s linear infinite;}
+  .ticker span{font-family:var(--lat);font-style:italic;font-size:15px;letter-spacing:.04em;display:inline-flex;align-items:center;gap:54px;color:rgba(231,223,212,.92);padding-right:54px;}
+  .ticker span::after{content:"✦";color:var(--rose);font-style:normal;font-size:11px;}
+  @keyframes run{to{transform:translateX(-50%);}}
+
+  /* section base */
+  section{position:relative;z-index:3;}
+  .pad{padding:112px 0;}
+  .sec-top{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-bottom:56px;}
+  .sec-top .l .ovl{display:block;margin-bottom:16px;}
+  .sec-top h2{font-family:var(--jp);font-weight:600;font-size:clamp(25px,3.3vw,37px);line-height:1.5;color:var(--ink);}
+  .sec-top h2 em{font-family:var(--lat);font-style:italic;font-weight:400;color:var(--rose-deep);}
+  .sec-top .r{font-size:13.5px;color:var(--taupe);max-width:24em;line-height:1.95;padding-bottom:6px;}
+  .center{text-align:center;}
+  .center .ovl{display:block;margin-bottom:16px;}
+  .center .lat-it{display:block;font-size:18px;color:var(--rose);margin-bottom:6px;}
+  .center h2{font-family:var(--jp);font-weight:600;font-size:clamp(25px,3.3vw,37px);line-height:1.55;color:var(--ink);}
+  .center h2 em{font-family:var(--lat);font-style:italic;font-weight:400;color:var(--rose-deep);}
+  .center p.sub{margin-top:18px;font-size:14px;color:var(--taupe);line-height:2;max-width:40em;margin-left:auto;margin-right:auto;}
+
+  /* gallery */
+  .gallery{background:var(--cream);}
+  .g-rail{display:flex;gap:22px;overflow-x:auto;padding:6px 28px 30px;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;}
+  .g-rail::-webkit-scrollbar{display:none;}
+  .g-card{scroll-snap-align:start;flex:0 0 clamp(240px,64vw,360px);}
+  .g-card .frame{aspect-ratio:4/5;border-radius:3px;overflow:hidden;position:relative;box-shadow:var(--shadow-sm);}
+  .g-card .frame img{width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.7,.2,1);}
+  .g-card:hover .frame img{transform:scale(1.05);}
+  .g-card .meta{display:flex;align-items:baseline;gap:10px;margin-top:15px;}
+  .g-card .meta .n{font-family:var(--lat);font-style:italic;font-size:15px;color:var(--rust);}
+  .g-card .meta .t{font-size:12.5px;color:var(--taupe);letter-spacing:.04em;}
+  .g-hint{margin-top:4px;text-align:right;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--rose);padding-right:28px;}
+
+  /* reasons */
+  .reasons{background:var(--greige);}
+  .r-list{display:flex;flex-direction:column;}
+  .r-row{display:grid;grid-template-columns:auto 1fr auto;gap:38px;align-items:center;padding:36px 0;border-top:1px solid var(--hair);transition:padding .4s;}
+  .r-row:last-child{border-bottom:1px solid var(--hair);}
+  .r-row:hover{padding-left:14px;}
+  .r-row .rn{font-family:var(--lat);font-weight:300;font-size:clamp(46px,7vw,84px);line-height:.8;color:var(--greige-deep);transition:color .4s;font-style:italic;}
+  .r-row:hover .rn{color:var(--rose);}
+  .r-row .rc h3{font-family:var(--jp);font-size:clamp(20px,2.4vw,26px);font-weight:600;color:var(--ink);margin-bottom:9px;}
+  .r-row .rc h3 .en{font-family:var(--lat);font-style:italic;font-weight:400;font-size:15px;color:var(--rose);margin-left:12px;}
+  .r-row .rc p{font-size:14px;color:var(--taupe);max-width:40em;line-height:1.95;}
+  .r-row .rk{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--rose-deep);writing-mode:vertical-rl;}
+
+  /* counters / stats */
+  .stats{background:var(--ink);color:var(--greige);}
+  .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+  .stat{padding:60px 24px;text-align:center;border-right:1px solid rgba(231,223,212,.14);}
+  .stat:last-child{border-right:none;}
+  .stat .v{font-family:var(--lat);font-weight:400;font-size:clamp(38px,5vw,56px);line-height:1;color:#fff;}
+  .stat .v small{font-size:.45em;color:var(--rose);margin-left:3px;}
+  .stat .lab{margin-top:14px;font-size:12px;letter-spacing:.06em;color:rgba(231,223,212,.66);}
+  .stat .en{font-family:var(--lat);font-style:italic;font-size:12px;color:var(--rose);margin-top:4px;}
+
+  /* doctor message (branding) */
+  .director{background:linear-gradient(180deg,var(--cream),var(--greige));}
+  .dir-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:60px;align-items:center;}
+  .dir-photo{position:relative;}
+  .dir-photo .arch2{aspect-ratio:3/4;border-radius:50% 50% 4px 4px/26% 26% 4px 4px;overflow:hidden;box-shadow:var(--shadow);background:var(--greige-deep);}
+  .dir-photo .arch2 img{width:100%;height:100%;object-fit:cover;object-position:center 22%;}
+  .dir-photo .tag{position:absolute;top:18px;left:18px;z-index:6;background:var(--paper);padding:7px 15px;border-radius:2px;font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--rose-deep);box-shadow:var(--shadow-sm);}
+  .dir-photo .verify{position:absolute;bottom:14px;right:14px;z-index:6;background:rgba(46,39,34,.82);color:#fff;font-size:10px;letter-spacing:.04em;padding:6px 11px;border-radius:2px;}
+  .dir-info .ovl{display:block;margin-bottom:18px;}
+  .dir-info .q{font-family:var(--lat);font-style:italic;font-size:50px;color:var(--rose);line-height:0;opacity:.5;display:block;height:24px;}
+  .dir-info blockquote{font-family:var(--jp);font-weight:600;font-size:clamp(20px,2.7vw,28px);line-height:1.7;color:var(--ink);margin:6px 0 22px;}
+  .dir-info blockquote b{color:var(--rust);}
+  .dir-info .msg{font-size:14px;color:var(--taupe);line-height:2.05;max-width:36em;}
+  .dir-sign{margin-top:26px;display:flex;align-items:center;gap:16px;}
+  .dir-sign .nm{font-family:var(--jp);font-size:19px;font-weight:700;color:var(--ink);}
+  .dir-sign .nm small{font-family:var(--sans);font-size:12px;font-weight:400;color:var(--rose-deep);margin-left:8px;}
+  .dir-sign .sig{font-family:var(--lat);font-style:italic;font-size:30px;color:var(--rose-deep);opacity:.85;margin-left:auto;}
+
+  /* credentials */
+  .cred-wrap{background:var(--paper);border:1px solid var(--hair);border-radius:5px;padding:40px 44px;margin-top:38px;}
+  .cred-cols{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:34px;}
+  .cred h4{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--rose-deep);font-weight:700;margin-bottom:13px;display:flex;align-items:center;gap:10px;}
+  .cred h4 .jpn{font-family:var(--jp);font-weight:600;letter-spacing:.06em;font-size:13px;color:var(--ink);text-transform:none;}
+  .cred h4::after{content:"";flex:1;height:1px;background:var(--hair);}
+  .cred ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
+  .cred li{font-size:13px;color:var(--ink);padding-left:18px;position:relative;line-height:1.65;}
+  .cred li::before{content:"";position:absolute;left:0;top:.7em;width:7px;height:1px;background:var(--rose);}
+
+  /* treatments */
+  .treat{background:var(--greige);}
+  .t-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--hair);border-radius:4px;overflow:hidden;background:var(--paper);}
+  .t-cell{padding:42px 30px;border-right:1px solid var(--hair);border-bottom:1px solid var(--hair);transition:background .4s;}
+  .t-cell:nth-child(3n){border-right:none;}
+  .t-cell:hover{background:var(--cream);}
+  .t-ico{width:60px;height:60px;border:1px solid var(--rose);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:22px;transition:background .4s;}
+  .t-cell:hover .t-ico{background:var(--rose);}
+  .t-ico svg{width:28px;height:28px;stroke:var(--rose-deep);fill:none;stroke-width:1.3;transition:stroke .4s;}
+  .t-cell:hover .t-ico svg{stroke:#fff;}
+  .t-cell .concern{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-family:var(--lat);font-style:italic;margin-bottom:8px;}
+  .t-cell .tn{font-family:var(--jp);font-size:21px;font-weight:600;color:var(--ink);}
+  .t-cell .tn .ko{display:block;font-family:var(--sans);font-size:11.5px;font-weight:400;color:var(--taupe);margin-top:5px;letter-spacing:.03em;}
+  .t-cell .td{margin-top:13px;font-size:12.5px;color:var(--taupe);line-height:1.8;}
+  .t-cell.cta{background:var(--ink);display:flex;flex-direction:column;justify-content:center;}
+  .t-cell.cta .tn{color:#fff;}
+  .t-cell.cta p{color:rgba(231,223,212,.7);font-size:12.5px;margin:10px 0 18px;line-height:1.7;}
+  .t-cell.cta .btn-line{padding:12px 22px;font-size:13.5px;align-self:flex-start;}
+
+  /* before/after */
+  .ba{background:var(--paper);}
+  .ba-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  .ba-card .pair{display:grid;grid-template-columns:1fr 1fr;gap:3px;border-radius:4px;overflow:hidden;box-shadow:var(--shadow-sm);}
+  .ba-card .pair .ph{aspect-ratio:3/4;position:relative;background:linear-gradient(160deg,#DAC8B4,#B89A82);display:flex;align-items:flex-end;}
+  .ba-card .pair .ph span{font-family:var(--lat);font-style:italic;font-size:12px;color:#fff;padding:10px 12px;letter-spacing:.04em;}
+  .ba-card .pair .ph.after{background:linear-gradient(160deg,#E2D2BD,#C7A98C);}
+  .ba-card .pair .slot{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.7);font-size:10px;letter-spacing:.2em;text-transform:uppercase;}
+  .ba-card .cl{margin-top:13px;font-family:var(--jp);font-size:15px;font-weight:600;color:var(--ink);}
+  .ba-card .cl small{display:block;font-family:var(--sans);font-weight:400;font-size:11.5px;color:var(--taupe);margin-top:3px;}
+  .ba-note{margin-top:28px;font-size:11.5px;color:var(--taupe);line-height:1.8;text-align:center;background:var(--cream);border:1px dashed var(--hair);border-radius:4px;padding:16px;}
+
+  /* reviews */
+  .reviews{background:var(--greige);}
+  .rv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .rv-card{background:var(--paper);border:1px solid var(--hair-soft);border-radius:6px;padding:32px 28px;display:flex;flex-direction:column;gap:16px;position:relative;}
+  .rv-card .stars{display:flex;gap:3px;color:var(--gold);font-size:15px;letter-spacing:2px;}
+  .rv-card .rq{font-family:var(--jp);font-size:15.5px;line-height:1.85;color:var(--ink);flex:1;}
+  .rv-card .ru{display:flex;align-items:center;gap:12px;padding-top:14px;border-top:1px solid var(--hair-soft);}
+  .rv-card .av{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--rose),var(--rose-deep));display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--lat);font-style:italic;font-size:15px;}
+  .rv-card .ru b{font-size:13px;color:var(--ink);font-weight:600;}
+  .rv-card .ru span{font-size:11px;color:var(--taupe);}
+  .rv-card .src{position:absolute;top:18px;right:20px;font-size:10px;letter-spacing:.1em;color:var(--rose);text-transform:uppercase;font-family:var(--lat);font-style:italic;}
+
+  /* process / flow */
+  .flow{background:var(--cream);}
+  .flow-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;position:relative;}
+  .step{background:var(--paper);border:1px solid var(--hair-soft);border-radius:6px;padding:30px 22px;position:relative;transition:transform .35s,box-shadow .35s;}
+  .step:hover{transform:translateY(-6px);box-shadow:var(--shadow-sm);}
+  .step .sn{font-family:var(--lat);font-style:italic;font-size:14px;color:var(--rust);}
+  .step .si{width:48px;height:48px;border:1px solid var(--rose);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:14px 0 18px;}
+  .step .si svg{width:24px;height:24px;stroke:var(--rose-deep);fill:none;stroke-width:1.3;}
+  .step h4{font-family:var(--jp);font-size:16px;font-weight:600;color:var(--ink);margin-bottom:8px;}
+  .step p{font-size:12px;color:var(--taupe);line-height:1.7;}
+  .flow-support{margin-top:26px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center;}
+  .chip{display:inline-flex;align-items:center;gap:8px;background:var(--paper);border:1px solid var(--hair);border-radius:999px;padding:10px 18px;font-size:12.5px;color:var(--ink);}
+  .chip::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--rose);}
+
+  /* event offer */
+  .event{background:radial-gradient(120% 80% at 50% 0%,rgba(181,135,126,.22),transparent 60%),linear-gradient(165deg,#36281f,#241b15);color:#fff;}
+  .ev-grid{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center;}
+  .ev-l .ovl{color:var(--rose);display:block;margin-bottom:18px;}
+  .ev-l .lat-it{display:block;font-size:20px;color:var(--rose);margin-bottom:8px;}
+  .ev-l h2{font-family:var(--jp);font-size:clamp(26px,3.4vw,40px);font-weight:700;line-height:1.45;color:#fff;}
+  .ev-l h2 em{font-family:var(--lat);font-style:italic;font-weight:400;color:var(--gold);}
+  .ev-l .urg{margin-top:22px;display:inline-flex;align-items:center;gap:10px;background:rgba(156,88,64,.3);border:1px solid var(--rust);border-radius:999px;padding:9px 18px;font-size:13px;color:#fff;}
+  .ev-l .urg b{color:var(--gold);font-family:var(--lat);font-style:italic;}
+  .ev-card{background:var(--paper);color:var(--ink);border-radius:8px;padding:40px 38px;box-shadow:var(--shadow);}
+  .ev-card .h{font-family:var(--jp);font-size:17px;font-weight:700;color:var(--rust);text-align:center;padding-bottom:18px;border-bottom:1px dashed var(--hair);}
+  .ev-card ul{list-style:none;margin:20px 0;display:flex;flex-direction:column;gap:15px;}
+  .ev-card li{display:flex;gap:14px;align-items:flex-start;font-size:14.5px;}
+  .ev-card li .ck{width:24px;height:24px;flex:none;border-radius:50%;background:var(--rose);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;margin-top:1px;}
+  .ev-card li b{font-family:var(--jp);font-weight:600;}
+  .ev-card .btn-line{width:100%;justify-content:center;margin-top:8px;}
+  .ev-card .fill-note{margin-top:14px;font-size:10.5px;color:var(--taupe);text-align:center;letter-spacing:.02em;}
+
+  /* faq */
+  .faq{background:var(--greige);}
+  .faq-list{max-width:840px;margin:0 auto;}
+  .qa{border-bottom:1px solid var(--hair);}
+  .qa summary{list-style:none;cursor:pointer;padding:26px 6px;display:flex;align-items:center;gap:18px;font-family:var(--jp);font-size:16.5px;font-weight:600;color:var(--ink);transition:color .3s;}
+  .qa summary::-webkit-details-marker{display:none;}
+  .qa summary .qm{font-family:var(--lat);font-style:italic;font-size:20px;color:var(--rose);flex:none;}
+  .qa summary .pl{margin-left:auto;width:18px;height:18px;position:relative;flex:none;transition:transform .35s;}
+  .qa summary .pl::before,.qa summary .pl::after{content:"";position:absolute;background:var(--rose-deep);}
+  .qa summary .pl::before{top:8px;left:0;right:0;height:1.5px;}
+  .qa summary .pl::after{left:8px;top:0;bottom:0;width:1.5px;transition:opacity .3s;}
+  .qa[open] summary .pl::after{opacity:0;}
+  .qa[open] summary{color:var(--rust);}
+  .qa .a{padding:0 6px 26px 44px;font-size:13.5px;color:var(--taupe);line-height:1.95;}
+
+  /* access */
+  .access{background:var(--cream);}
+  .acc-grid{display:grid;grid-template-columns:1fr 1fr;border-radius:4px;overflow:hidden;box-shadow:var(--shadow);}
+  .acc-info{background:var(--paper);padding:48px 44px;}
+  .acc-info .ovl{display:block;margin-bottom:20px;}
+  .info-row{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--hair-soft);}
+  .info-row:last-child{border-bottom:none;}
+  .info-row .ic{width:40px;height:40px;flex:none;border:1px solid var(--rose);border-radius:50%;display:flex;align-items:center;justify-content:center;}
+  .info-row .ic svg{width:19px;height:19px;stroke:var(--rose-deep);fill:none;stroke-width:1.3;}
+  .info-row .mt b{display:block;font-family:var(--lat);font-style:italic;font-size:14px;color:var(--rust);margin-bottom:5px;}
+  .info-row .mt span{display:block;font-size:14px;color:var(--ink);line-height:1.7;}
+  .info-row .mt .dim{color:var(--taupe);font-size:12.5px;}
+  .htable{width:100%;border-collapse:collapse;margin-top:2px;}
+  .htable td{padding:8px 0;font-size:13.5px;border-bottom:1px dashed var(--hair-soft);}
+  .htable td:last-child{text-align:right;font-family:var(--lat);color:var(--rose-deep);font-weight:500;}
+  .htable tr:last-child td{border-bottom:none;}
+  .acc-cta{background:radial-gradient(120% 90% at 50% 0%,rgba(181,135,126,.28),transparent 58%),linear-gradient(165deg,#36281f,#241b15);color:#fff;padding:50px 44px;display:flex;flex-direction:column;justify-content:center;text-align:center;}
+  .acc-cta .lat-it{display:block;font-size:18px;color:var(--rose);margin-bottom:10px;}
+  .acc-cta h3{font-family:var(--jp);font-size:clamp(23px,3vw,31px);font-weight:600;line-height:1.6;color:#fff;}
+  .acc-cta p{margin:16px auto 24px;color:rgba(231,223,212,.72);font-size:13.5px;max-width:23em;line-height:1.9;}
+  .acc-cta .qr{width:118px;height:118px;background:var(--paper);border-radius:8px;margin:0 auto 18px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--taupe);}
+  .acc-cta .qr .qrbox{width:74px;height:74px;border-radius:4px;background:
+    repeating-conic-gradient(var(--ink) 0% 25%, #fff 0% 50%) 0/14px 14px;}
+  .acc-cta .qr small{font-size:9px;letter-spacing:.1em;}
+  .acc-cta .btn-line{margin:0 auto;font-size:16px;padding:17px 36px;}
+  .acc-cta .micro{margin-top:14px;font-size:11px;letter-spacing:.1em;color:rgba(231,223,212,.45);}
+
+  /* footer */
+  footer{background:var(--ink);color:rgba(231,223,212,.6);padding:64px 0 130px;text-align:center;position:relative;z-index:3;}
+  footer .logo{font-family:var(--lat);font-size:34px;color:#fff;font-weight:500;letter-spacing:.06em;}
+  footer .sub{font-size:10px;letter-spacing:.36em;color:var(--rose);text-transform:uppercase;margin-top:7px;}
+  footer .addr{font-size:13px;margin-top:24px;line-height:1.9;}
+  footer .copy{font-size:11px;margin-top:24px;color:rgba(231,223,212,.32);letter-spacing:.04em;}
+
+  /* floating + mobile bar */
+  .float-line{position:fixed;right:26px;bottom:30px;z-index:65;display:inline-flex;align-items:center;gap:10px;background:var(--line-green);color:#fff;font-weight:700;font-size:14px;padding:15px 22px;border-radius:999px;box-shadow:0 20px 40px -14px rgba(6,199,85,.7);transition:transform .25s;}
+  .float-line:hover{transform:translateY(-3px) scale(1.02);}
+  .float-line svg{width:20px;height:20px;}
+  .mbar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;gap:9px;padding:11px 14px calc(11px + env(safe-area-inset-bottom));background:rgba(245,239,230,.93);backdrop-filter:blur(16px);box-shadow:0 -2px 26px -14px rgba(58,40,30,.5);}
+  .mbar a{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px;border-radius:3px;font-weight:700;font-size:14.5px;}
+  .mbar .m-line{background:var(--line-green);color:#fff;}
+  .mbar .m-call{background:var(--paper);color:var(--ink);border:1px solid var(--hair);font-family:var(--jp);}
+  .mbar svg{width:18px;height:18px;}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1);}
+  .reveal.in{opacity:1;transform:none;}
+  .d1{transition-delay:.08s;}.d2{transition-delay:.18s;}.d3{transition-delay:.28s;}.d4{transition-delay:.38s;}
+
+  @media(max-width:980px){
+    .badges .wrap{grid-template-columns:repeat(2,1fr);}
+    .badge:nth-child(2){border-right:none;}
+    .badge:nth-child(1),.badge:nth-child(2){border-bottom:1px solid var(--hair-soft);}
+    .cred-cols{grid-template-columns:1fr;gap:26px;}
+    .ba-grid{grid-template-columns:repeat(2,1fr);}
+    .rv-grid{grid-template-columns:1fr;}
+    .flow-grid{grid-template-columns:repeat(2,1fr);}
+    .stats .wrap{grid-template-columns:repeat(2,1fr);}
+    .stat:nth-child(2){border-right:none;}
+    .stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid rgba(231,223,212,.14);}
+  }
+  @media(max-width:880px){
+    header{padding:16px 20px;}
+    .nav-cta{display:none;}
+    .hero{padding:104px 0 56px;}
+    .hero-grid{grid-template-columns:1fr;gap:42px;}
+    .hero-visual{max-width:360px;margin:0 auto;width:100%;}
+    .hero-num{display:none;}
+    .sec-top{flex-direction:column;align-items:flex-start;gap:14px;}
+    .dir-grid{grid-template-columns:1fr;gap:40px;}
+    .dir-photo{max-width:330px;margin:0 auto;width:100%;}
+    .t-grid{grid-template-columns:1fr;}
+    .t-cell{border-right:none;}
+    .ev-grid{grid-template-columns:1fr;gap:34px;}
+    .acc-grid{grid-template-columns:1fr;}
+    .r-row{grid-template-columns:auto 1fr;gap:22px;}
+    .r-row .rk{display:none;}
+    .float-line{display:none;}
+    .mbar{display:flex;}
+    footer{padding-bottom:118px;}
+    .pad{padding:78px 0;}
+  }
+  @media(max-width:520px){
+    .wrap{padding:0 20px;}
+    .hero-meta{flex-wrap:wrap;gap:14px 0;}
+    .hero-meta .m{padding-right:18px;margin-right:18px;}
+    .ba-grid{grid-template-columns:1fr 1fr;gap:12px;}
+    .flow-grid{grid-template-columns:1fr;}
+    .stats .wrap{grid-template-columns:1fr 1fr;}
+    .acc-info,.acc-cta,.ev-card{padding:34px 24px;}
+    .cred-wrap{padding:30px 24px;}
+    .float{left:-6px;max-width:200px;}
+  }
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<!-- HEADER -->
+<header id="hdr">
+  <div class="brand"><span class="logo">mellow</span><span class="div"></span><span class="sub">Clinic Sinsa</span></div>
+  <a class="nav-cta" href="#contact"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.69 2 10.25c0 2.62 1.5 4.95 3.86 6.48-.13.49-.84 3.04-.87 3.25 0 0-.02.16.08.22.1.06.23.01.23.01.3-.04 3.43-2.24 3.97-2.62.55.08 1.12.12 1.7.12 5.52 0 10-3.69 10-8.25S17.52 2 12 2z"/></svg>LINEで相談</a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <span class="hero-num">SINSA · SEOUL — DERMATOLOGY</span>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <div class="hero-eyebrow reveal"><span class="ovl">韓国 皮膚科専門医</span></div>
+      <h1 class="reveal d1">韓国で肌管理する<br>なら？<em>—</em><span class="u mk">皮膚科専門医</span><br>一択。</h1>
+      <p class="lead reveal d2">韓国上位 <span class="lat-it" style="color:var(--rose-deep);font-size:1.15em;">1.5%</span> の皮膚科専門医が、<br>カウンセリングから施術まで一貫して担当。<br>あなたの肌に、誠実な答えを。</p>
+      <div class="actions reveal d3">
+        <a class="btn-line" href="#contact"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.69 2 10.25c0 2.62 1.5 4.95 3.86 6.48-.13.49-.84 3.04-.87 3.25 0 0-.02.16.08.22.1.06.23.01.23.01.3-.04 3.43-2.24 3.97-2.62.55.08 1.12.12 1.7.12 5.52 0 10-3.69 10-8.25S17.52 2 12 2z"/></svg>公式LINEで無料相談</a>
+        <a class="btn-ghost" href="#director">院長について <span class="ar">→</span></a>
+      </div>
+      <div class="hero-meta reveal d3">
+        <div class="m"><b>1.5<small>%</small></b><span>韓国上位の専門医</span></div>
+        <div class="m"><b>1:1</b><span>院長が直接担当</span></div>
+        <div class="m"><b>3<small>min</small></b><span>新沙駅1番出口</span></div>
+      </div>
+    </div>
+    <div class="hero-visual reveal d2">
+      <div class="arch"><img src="img/hero.jpg" alt="メロウクリニック新沙院 院内" /><span class="cap">メロウクリニック新沙院 院内</span></div>
+      <div class="float"><span class="seal">専門</span><p><b>皮膚科専門医</b>が、相談から施術まで<br>すべて直接担当します。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BADGES -->
+<div class="badges">
+  <div class="wrap">
+    <div class="badge"><span class="bi"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span><div><b>皮膚科専門医</b><span>Board-certified</span></div></div>
+    <div class="badge"><span class="bi"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M6 21c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg></span><div><b>院長が1:1で担当</b><span>Oder-made</span></div></div>
+    <div class="badge"><span class="bi"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 8l8-4 8 4"/><path d="M6 12h12"/></svg></span><div><b>KDA・AKD 正会員</b><span>Society member</span></div></div>
+    <div class="badge"><span class="bi"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.5 7-11a7 7 0 10-14 0c0 4.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.4"/></svg></span><div><b>新沙駅 徒歩3分</b><span>日本語対応</span></div></div>
+  </div>
+</div>
+
+<!-- TICKER -->
+<div class="ticker"><div class="run">
+  <span>過剰な施術はしない</span><span>오더메이드 맞춤 진료</span><span>韓国上位 1.5% の皮膚科専門医</span><span>本来の美しさを大切に</span>
+  <span>過剰な施術はしない</span><span>오더메이드 맞춤 진료</span><span>韓国上位 1.5% の皮膚科専門医</span><span>本来の美しさを大切に</span>
+</div></div>
+
+<!-- GALLERY -->
+<section class="gallery pad" id="gallery">
+  <div class="wrap sec-top">
+    <div class="l"><span class="ovl reveal">Interior &amp; Treatment</span><h2 class="reveal d1">落ち着いた空間で、<br><em>あなただけ</em>の肌時間を。</h2></div>
+    <p class="r reveal d2">清潔感と上質さにこだわった院内。緊張せず、ゆったりと向き合える空間をご用意しています。</p>
+  </div>
+  <div class="g-rail">
+    <div class="g-card reveal"><div class="frame"><img src="img/int01.jpg" alt="院内 1"/></div><div class="meta"><span class="n">01</span><span class="t">トリートメントルーム</span></div></div>
+    <div class="g-card reveal d1"><div class="frame"><img src="img/int03.jpg" alt="院内 2"/></div><div class="meta"><span class="n">02</span><span class="t">エントランス / Reception</span></div></div>
+    <div class="g-card reveal d1"><div class="frame"><img src="img/int05.jpg" alt="院内 3"/></div><div class="meta"><span class="n">03</span><span class="t">ラウンジ / Lounge</span></div></div>
+    <div class="g-card reveal d2"><div class="frame"><img src="img/int08.jpg" alt="院内 4"/></div><div class="meta"><span class="n">04</span><span class="t">施術ルーム / Treatment</span></div></div>
+    <div class="g-card reveal d2"><div class="frame"><img src="img/int09.jpg" alt="院内 5"/></div><div class="meta"><span class="n">05</span><span class="t">パウダールーム</span></div></div>
+    <div class="g-card reveal d3"><div class="frame"><img src="img/int11.jpg" alt="院内 6"/></div><div class="meta"><span class="n">06</span><span class="t">院内 / Interior</span></div></div>
+  </div>
+  <p class="g-hint reveal">— swipe to explore —</p>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="wrap">
+    <div class="stat reveal"><div class="v" data-to="1.5"><span class="cnt">0</span></div><div class="lab">韓国上位の皮膚科専門医</div><div class="en">Top Specialist</div></div>
+    <div class="stat reveal d1"><div class="v" data-to="100"><span class="cnt">0</span><small>%</small></div><div class="lab">院長による直接診療</div><div class="en">1:1 Care</div></div>
+    <div class="stat reveal d2"><div class="v" data-to="2"><span class="cnt">0</span><small>名</small></div><div class="lab">皮膚科専門医が在籍</div><div class="en">Specialists</div></div>
+    <div class="stat reveal d3"><div class="v" data-to="3"><span class="cnt">0</span><small>min</small></div><div class="lab">新沙駅1番出口から</div><div class="en">From Station</div></div>
+  </div>
+</section>
+
+<!-- DIRECTOR MESSAGE (personal branding) -->
+<section class="director pad" id="director">
+  <div class="wrap dir-grid">
+    <div class="dir-photo reveal">
+      <span class="tag">皮膚科専門医</span>
+      <div class="arch2"><img src="img/son_changhwa.png" alt="ソン・チャンファ院長（송창화 원장）" /></div>
+    </div>
+    <div class="dir-info">
+      <span class="ovl reveal">Director's Message — 院長メッセージ</span>
+      <span class="q reveal d1">“</span>
+      <blockquote class="reveal d1">過剰な施術で、一時的に変えること。<br>それは私の目指す美容医療では<b>ありません。</b></blockquote>
+      <p class="msg reveal d2">皮膚科専門医として大切にしているのは、肌そのものの健やかさです。流行や数字を追うのではなく、お一人おひとりの肌と誠実に向き合い、本当に必要なケアだけをご提案する。カウンセリングから施術まで、私が責任を持って担当します。あなたが本来もっている美しさを、これからも大切にしていきたいと思っています。</p>
+      <div class="dir-sign reveal d2">
+        <span class="nm">ソン・チャンファ<small>송창화 ／ 院長</small></span>
+        <span class="sig">Son C.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="cred-wrap reveal d1">
+      <div class="cred-cols">
+        <div class="cred"><h4><span class="jpn">学歴</span> Education</h4>
+          <ul><li>漢陽大学 医学部 優等卒業</li><li>漢陽大学 医学部 皮膚科学 修士課程 修了</li><li>漢陽大学病院 インターン課程 修了</li><li>漢陽大学病院 皮膚科 専攻医課程 修了</li></ul></div>
+        <div class="cred"><h4><span class="jpn">経歴</span> Career</h4>
+          <ul><li>現）メロウ皮膚科 新沙院 院長</li><li>前）韓国ハンセン福祉協会附設<br>福祉皮膚科診療院 診療院長</li></ul></div>
+        <div class="cred"><h4><span class="jpn">学会</span> Society</h4>
+          <ul><li>大韓皮膚科学会（KDA）正会員</li><li>大韓皮膚科医会（AKD）正会員</li></ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TREATMENTS -->
+<section class="treat pad" id="treatments">
+  <div class="wrap">
+    <div class="center" style="margin-bottom:52px;">
+      <span class="lat-it reveal">Signature Menu</span>
+      <span class="ovl reveal" style="display:block;margin-bottom:16px;">人気の施術</span>
+      <h2 class="reveal d1">肌悩み別、日本の患者様に<br>選ばれている施術。</h2>
+    </div>
+    <div class="t-grid">
+      <div class="t-cell reveal"><div class="t-ico"><svg viewBox="0 0 32 32"><path d="M8 20c0-6 3.5-10 8-10s8 4 8 10"/><path d="M11 22l5-4 5 4"/><path d="M16 6v3"/></svg></div><div class="concern">Sagging</div><div class="tn">オンダリフト<span class="ko">온다리프팅 · たるみ</span></div><p class="td">高周波の熱で肌深部を引き締め、フェイスラインにハリと弾力を。</p></div>
+      <div class="t-cell reveal d1"><div class="t-ico"><svg viewBox="0 0 32 32"><path d="M16 5l2.5 6.5L25 14l-6.5 2.5L16 23l-2.5-6.5L7 14l6.5-2.5z"/></svg></div><div class="concern">Anti-aging</div><div class="tn">ザーフリフティング<span class="ko">자르프 리프팅 · エイジング</span></div><p class="td">年齢サインにアプローチする糸リフト。たるみを土台から持ち上げます。</p></div>
+      <div class="t-cell reveal d2"><div class="t-ico"><svg viewBox="0 0 32 32"><path d="M16 5c4 5 7 8.5 7 12.5A7 7 0 019 17.5C9 13.5 12 10 16 5z"/></svg></div><div class="concern">Hydration</div><div class="tn">ハイドラトックス<span class="ko">하이드라톡스 · 乾燥肌</span></div><p class="td">うるおいと栄養を届け、ゆらぎがちな肌のコンディションを整えます。</p></div>
+      <div class="t-cell reveal"><div class="t-ico"><svg viewBox="0 0 32 32"><circle cx="14" cy="14" r="7"/><path d="M19 19l5 5"/><circle cx="14" cy="14" r="2.4"/></svg></div><div class="concern">Pores</div><div class="tn">ゴールドPTT<span class="ko">골드 PTT · 毛穴・ニキビ</span></div><p class="td">毛穴と皮脂トラブルにアプローチ。なめらかで清潔感のある肌印象へ。</p></div>
+      <div class="t-cell reveal d1"><div class="t-ico"><svg viewBox="0 0 32 32"><path d="M10 8c0 0 1 3 6 3s6-3 6-3"/><path d="M9 11c0 7 3 13 7 13s7-6 7-13"/></svg></div><div class="concern">Contour</div><div class="tn">エラボトックス<span class="ko">사각턱 보톡스 · 輪郭</span></div><p class="td">張ったエラをやわらげ、すっきりとした小顔ラインを演出します。</p></div>
+      <div class="t-cell cta reveal d2"><div class="tn">あなたに<br>合う施術は？<span class="ko" style="color:rgba(231,223,212,.55)">院長が直接ご提案</span></div><p>肌診断のうえ、最適な組み合わせをご提案します。</p><a class="btn-line" href="#contact"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.69 2 10.25c0 2.62 1.5 4.95 3.86 6.48-.13.49-.84 3.04-.87 3.25 0 0-.02.16.08.22.1.06.23.01.23.01.3-.04 3.43-2.24 3.97-2.62.55.08 1.12.12 1.7.12 5.52 0 10-3.69 10-8.25S17.52 2 12 2z"/></svg>LINEで相談</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section class="ba pad" id="cases">
+  <div class="wrap">
+    <div class="center" style="margin-bottom:50px;">
+      <span class="lat-it reveal">Before &amp; After</span>
+      <span class="ovl reveal" style="display:block;margin-bottom:16px;">症例写真</span>
+      <h2 class="reveal d1">変化は、<em>結果</em>で語る。</h2>
+      <p class="sub reveal d1">実際の症例写真で、施術前後の変化をご確認いただけます。</p>
+    </div>
+    <div class="ba-grid">
+      <div class="ba-card reveal"><div class="pair"><div class="ph"><div class="slot">写真挿入</div><span>Before</span></div><div class="ph after"><div class="slot">写真挿入</div><span>After</span></div></div><div class="cl">たるみ改善<small>オンダリフト</small></div></div>
+      <div class="ba-card reveal d1"><div class="pair"><div class="ph"><div class="slot">写真挿入</div><span>Before</span></div><div class="ph after"><div class="slot">写真挿入</div><span>After</span></div></div><div class="cl">毛穴・ニキビ<small>ゴールドPTT</small></div></div>
+      <div class="ba-card reveal d2"><div class="pair"><div class="ph"><div class="slot">写真挿入</div><span>Before</span></div><div class="ph after"><div class="slot">写真挿入</div><span>After</span></div></div><div class="cl">輪郭<small>エラボトックス</small></div></div>
+      <div class="ba-card reveal d3"><div class="pair"><div class="ph"><div class="slot">写真挿入</div><span>Before</span></div><div class="ph after"><div class="slot">写真挿入</div><span>After</span></div></div><div class="cl">乾燥肌<small>ハイドラトックス</small></div></div>
+    </div>
+    <p class="ba-note">※ 同意を得た実際の症例写真を掲載してください。効果には個人差があり、すべての方に同様の結果を保証するものではありません。（医療広告ガイドライン準拠の表記が必要です）</p>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews pad" id="reviews">
+  <div class="wrap">
+    <div class="sec-top">
+      <div class="l"><span class="ovl reveal">Patient Voice — 患者様の声</span><h2 class="reveal d1">日本から来院された<br>患者様の<em>リアルな声</em>。</h2></div>
+      <p class="r reveal d2">言葉が通じるか、初めての韓国で不安はないか——実際に来院された日本の患者様の声をご紹介します。</p>
+    </div>
+    <div class="rv-grid">
+      <div class="rv-card reveal"><span class="src">Google</span><div class="stars">★★★★★</div><p class="rq">（実際の口コミをここに掲載予定）日本語で相談から施術まで対応してもらえて安心でした。先生が一つひとつ丁寧に説明してくれます。</p><div class="ru"><span class="av">Y</span><div><b>日本人患者様</b><span>東京都 ・ 30代</span></div></div></div>
+      <div class="rv-card reveal d1"><span class="src">LINE</span><div class="stars">★★★★★</div><p class="rq">（実際の口コミをここに掲載予定）過剰に勧められることがなく、本当に必要な施術だけを提案してくれました。新沙駅から近くて通いやすい。</p><div class="ru"><span class="av">M</span><div><b>日本人患者様</b><span>大阪府 ・ 40代</span></div></div></div>
+      <div class="rv-card reveal d2"><span class="src">Review</span><div class="stars">★★★★★</div><p class="rq">（実際の口コミをここに掲載予定）皮膚科専門医の先生が担当してくれるのが決め手でした。肌の状態に合わせた提案が的確でした。</p><div class="ru"><span class="av">A</span><div><b>日本人患者様</b><span>福岡県 ・ 20代</span></div></div></div>
+    </div>
+    <p class="ba-note" style="margin-top:24px;">※ 実際の口コミ・レビュー（Google／LINE／SNS等）に差し替えてください。患者様の体験談掲載は同意取得と医療広告ガイドラインの確認が必要です。</p>
+  </div>
+</section>
+
+<!-- FLOW -->
+<section class="flow pad" id="flow">
+  <div class="wrap">
+    <div class="center" style="margin-bottom:50px;">
+      <span class="lat-it reveal">How It Works</span>
+      <span class="ovl reveal" style="display:block;margin-bottom:16px;">ご相談から施術までの流れ</span>
+      <h2 class="reveal d1">初めての韓国でも、<em>安心</em>。</h2>
+      <p class="sub reveal d1">LINEでのご相談から施術後のアフターフォローまで、日本語でサポートいたします。</p>
+    </div>
+    <div class="flow-grid">
+      <div class="step reveal"><div class="sn">01</div><div class="si"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H7l-3 3z"/></svg></div><h4>LINEで相談</h4><p>公式LINEから日本語でお気軽に。無料でご相談いただけます。</p></div>
+      <div class="step reveal d1"><div class="sn">02</div><div class="si"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg></div><h4>カウンセリング・予約</h4><p>お悩みをヒアリングし、来院日時を調整します。</p></div>
+      <div class="step reveal d2"><div class="si"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.5 7-11a7 7 0 10-14 0c0 4.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.4"/></svg></div><div class="sn" style="position:absolute;top:30px;left:22px">03</div><h4>ご来院・診察</h4><p>新沙駅3分。院長が対面で肌を診察します。</p></div>
+      <div class="step reveal d2"><div class="sn">04</div><div class="si"><svg viewBox="0 0 24 24"><path d="M12 3v18M5 8l7-5 7 5"/><circle cx="12" cy="14" r="3"/></svg></div><h4>施術</h4><p>皮膚科専門医が責任を持って施術を担当します。</p></div>
+      <div class="step reveal d3"><div class="sn">05</div><div class="si"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0116 0"/><path d="M8 16l4 4 4-4"/></svg></div><h4>アフターケア</h4><p>施術後もLINEでフォロー。帰国後のケアもご相談ください。</p></div>
+    </div>
+    <div class="flow-support">
+      <span class="chip">日本語対応</span><span class="chip">新沙駅 徒歩3分</span><span class="chip">来院前 LINE相談 無料</span><span class="chip">予約時間の調整可</span>
+    </div>
+  </div>
+</section>
+
+<!-- EVENT OFFER -->
+<section class="event pad" id="event">
+  <div class="wrap ev-grid">
+    <div class="ev-l">
+      <span class="ovl reveal">Limited Offer</span>
+      <span class="lat-it reveal">For Japanese Patients</span>
+      <h2 class="reveal d1">日本の患者様<br><em>限定</em>特典のご案内。</h2>
+      <div class="urg reveal d2"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C2A06B" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 毎月 <b>限定◯名様</b>（先着順）</div>
+    </div>
+    <div class="ev-card reveal d1">
+      <div class="h">MELLOW SINSA × 日本の患者様 特典</div>
+      <ul>
+        <li><span class="ck">✓</span><span><b>初回カウンセリング無料</b>（皮膚科専門医による肌診断）</span></li>
+        <li><span class="ck">✓</span><span><b>日本語サポート</b>付き — 相談から施術まで安心</span></li>
+        <li><span class="ck">✓</span><span><b>LINE友だち登録特典</b>（◯◯ ／ 内容は確定後に設定）</span></li>
+        <li><span class="ck">✓</span><span><b>人気施術の特別ご優待</b>（◯◯%OFF ／ 金額は確定後に設定）</span></li>
+      </ul>
+      <a class="btn-line" href="#contact"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.69 2 10.25c0 2.62 1.5 4.95 3.86 6.48-.13.49-.84 3.04-.87 3.25 0 0-.02.16.08.22.1.06.23.01.23.01.3-.04 3.43-2.24 3.97-2.62.55.08 1.12.12 1.7.12 5.52 0 10-3.69 10-8.25S17.52 2 12 2z"/></svg>LINEで特典を受け取る</a>
+      <p class="fill-note">※ 特典内容・割引率・限定人数は確定後に差し替えてください（医療広告ガイドライン確認要）</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq pad" id="faq">
+  <div class="wrap">
+    <div class="center" style="margin-bottom:48px;">
+      <span class="lat-it reveal">FAQ</span>
+      <span class="ovl reveal" style="display:block;margin-bottom:16px;">よくあるご質問</span>
+      <h2 class="reveal d1">不安なことは、<em>先に</em>解消を。</h2>
+    </div>
+    <div class="faq-list">
+      <details class="qa reveal" open><summary><span class="qm">Q</span>日本語は通じますか？<span class="pl"></span></summary><div class="a">はい。公式LINEでのご相談、ご来院時の対応ともに日本語でサポートいたします。初めての韓国でも安心してご相談ください。</div></details>
+      <details class="qa reveal"><summary><span class="qm">Q</span>痛みやダウンタイムはありますか？<span class="pl"></span></summary><div class="a">施術内容によって異なります。痛みやダウンタイムの目安は、カウンセリング時に一つひとつ丁寧にご説明します。ご不安な点は事前にLINEでご相談いただけます。</div></details>
+      <details class="qa reveal"><summary><span class="qm">Q</span>来院当日に施術は受けられますか？<span class="pl"></span></summary><div class="a">ご予約状況により当日施術が可能な場合があります。渡韓スケジュールに合わせてLINEで事前に調整いたしますので、お気軽にご相談ください。</div></details>
+      <details class="qa reveal"><summary><span class="qm">Q</span>場所・アクセスは？<span class="pl"></span></summary><div class="a">新沙駅1番出口から徒歩約3分（ソウル特別市 江南区 島山大路138, 12階）。江南エリアでアクセスしやすい立地です。</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ACCESS -->
+<section class="access pad" id="contact">
+  <div class="wrap">
+    <div class="center" style="margin-bottom:46px;">
+      <span class="lat-it reveal">Access &amp; Contact</span>
+      <span class="ovl reveal" style="display:block;margin-bottom:16px;">アクセス・お問い合わせ</span>
+      <h2 class="reveal d1">ご予約・ご相談は、<em>公式LINE</em>から。</h2>
+    </div>
+    <div class="acc-grid">
+      <div class="acc-info reveal d1">
+        <span class="ovl">Information</span>
+        <div class="info-row"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><div class="mt" style="width:100%;"><b>診療時間 — Hours</b><table class="htable"><tr><td>平日 (月〜金)</td><td>10:00 – 20:00</td></tr><tr><td>土曜日</td><td>10:00 – 16:00</td></tr><tr><td>昼休み</td><td>13:00 – 14:00</td></tr></table><span class="dim" style="margin-top:10px;">※ 日曜日・祝日は休診です。</span></div></div>
+        <div class="info-row"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.5 7-11a7 7 0 10-14 0c0 4.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div><div class="mt"><b>アクセス — Location</b><span>ソウル特別市 江南区 島山大路138, 12階</span><span class="dim">新沙駅 1番出口から徒歩約3分</span></div></div>
+      </div>
+      <div class="acc-cta reveal d2">
+        <span class="lat-it">Free Counseling</span>
+        <h3>まずは、お気軽に<br>ご相談ください。</h3>
+        <p>当院 公式LINE にて、ご予約・ご相談を承っております。日本語でどうぞ。</p>
+        <div class="qr"><div class="qrbox"></div><small>LINE QR（設定要）</small></div>
+        <a class="btn-line" href="#" id="lineCta"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.69 2 10.25c0 2.62 1.5 4.95 3.86 6.48-.13.49-.84 3.04-.87 3.25 0 0-.02.16.08.22.1.06.23.01.23.01.3-.04 3.43-2.24 3.97-2.62.55.08 1.12.12 1.7.12 5.52 0 10-3.69 10-8.25S17.52 2 12 2z"/></svg>公式LINEで相談・予約</a>
+        <p class="micro">LINE ID / リンクは公開前に設定してください</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="logo">mellow</div>
+    <div class="sub">Clinic Sinsa · Seoul</div>
+    <p class="addr">ソウル特別市 江南区 島山大路138, 12階<br>新沙駅 1番出口から徒歩約3分</p>
+    <p class="copy">© Mellow Clinic Sinsa. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- FLOATING + MOBILE -->
+<a class="float-line" href="#contact"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.69 2 10.25c0 2.62 1.5 4.95 3.86 6.48-.13.49-.84 3.04-.87 3.25 0 0-.02.16.08.22.1.06.23.01.23.01.3-.04 3.43-2.24 3.97-2.62.55.08 1.12.12 1.7.12 5.52 0 10-3.69 10-8.25S17.52 2 12 2z"/></svg>LINEで無料相談</a>
+<div class="mbar">
+  <a class="m-call" href="#director">院長を見る</a>
+  <a class="m-line" href="#contact"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.69 2 10.25c0 2.62 1.5 4.95 3.86 6.48-.13.49-.84 3.04-.87 3.25 0 0-.02.16.08.22.1.06.23.01.23.01.3-.04 3.43-2.24 3.97-2.62.55.08 1.12.12 1.7.12 5.52 0 10-3.69 10-8.25S17.52 2 12 2z"/></svg>LINEで無料相談</a>
+</div>
+
+<script>
+  const hdr=document.getElementById('hdr');
+  const onScroll=()=>hdr.classList.toggle('scrolled',window.scrollY>40);
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -7% 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  window.addEventListener('load',()=>document.querySelectorAll('.hero .reveal').forEach(el=>el.classList.add('in')));
+
+  // count up
+  const fmt=(v,to)=>Number.isInteger(to)?Math.round(v):v.toFixed(1);
+  const cio=new IntersectionObserver((es)=>{es.forEach(e=>{
+    if(!e.isIntersecting)return;
+    const cnt=e.target.querySelector('.cnt');const to=parseFloat(e.target.dataset.to);
+    const t0=performance.now(),dur=1300;
+    const tick=(t)=>{const p=Math.min(1,(t-t0)/dur);cnt.textContent=fmt(to*(1-Math.pow(1-p,3)),to);if(p<1)requestAnimationFrame(tick);};
+    requestAnimationFrame(tick);cio.unobserve(e.target);
+  });},{threshold:0.5});
+  document.querySelectorAll('.stat .v[data-to]').forEach(el=>cio.observe(el));
+</script>
+</body>
+</html>
