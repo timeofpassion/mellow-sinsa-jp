@@ -317,6 +317,38 @@
   .mbar .m-call{background:var(--paper);color:var(--ink);border:1px solid var(--hair);font-family:var(--jp);}
   .mbar svg{width:18px;height:18px;}
 
+  /* scroll-expand intro (cinematic interior film) */
+  .sx{position:relative;z-index:3;min-height:100dvh;overflow:hidden;background:var(--greige);}
+  .sx-bg{position:absolute;inset:0;z-index:0;will-change:opacity;}
+  .sx-bg img{width:100%;height:100%;object-fit:cover;object-position:center;}
+  .sx-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(46,39,34,.14),rgba(46,39,34,.4));}
+  .sx-stage{position:relative;z-index:2;width:100%;height:100dvh;display:flex;align-items:center;justify-content:center;}
+  .sx-media{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:300px;height:400px;max-width:95vw;max-height:84vh;border-radius:16px;overflow:hidden;box-shadow:0 44px 96px -32px rgba(46,39,34,.62);z-index:1;}
+  .sx-media video{width:100%;height:100%;object-fit:cover;display:block;}
+  .sx-media-ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(46,39,34,.16),rgba(46,39,34,.5));opacity:.5;transition:opacity .2s;}
+  .sx-cue{position:absolute;left:0;right:0;bottom:18px;z-index:3;display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.9);pointer-events:none;}
+  .sx-cue .ln{width:1px;height:26px;background:rgba(255,255,255,.55);}
+  .sx-cue .tx{font-size:10.5px;letter-spacing:.34em;text-transform:uppercase;font-family:var(--lat);font-style:italic;}
+  .sx-title{position:relative;z-index:4;display:flex;flex-direction:column;align-items:center;gap:.1em;text-align:center;pointer-events:none;width:100%;}
+  .sx-title span{display:block;font-family:var(--jp);font-weight:600;font-size:clamp(28px,6.2vw,66px);line-height:1.34;white-space:nowrap;will-change:transform;text-shadow:0 2px 22px rgba(251,247,241,.5);}
+  .sx-title .t1{color:var(--ink);}
+  .sx-title .t2{color:var(--rose-deep);font-family:var(--lat);font-style:italic;font-weight:400;letter-spacing:.01em;}
+  .sx-eyebrow{position:absolute;top:104px;left:0;right:0;z-index:4;text-align:center;pointer-events:none;}
+  .sx-eyebrow .ovl{letter-spacing:.42em;}
+  .sx-scrollhint{position:absolute;left:50%;bottom:30px;transform:translateX(-50%);z-index:5;width:24px;height:38px;background:transparent;border:1px solid var(--rose-deep);border-radius:14px;cursor:pointer;display:flex;justify-content:center;padding-top:7px;transition:opacity .4s;}
+  .sx-scrollhint span{width:3px;height:8px;border-radius:2px;background:var(--rose-deep);animation:sxd 1.5s infinite;}
+  @keyframes sxd{0%{opacity:0;transform:translateY(-4px);}30%{opacity:1;}60%{opacity:1;transform:translateY(6px);}100%{opacity:0;transform:translateY(10px);}}
+  body.sx-lock{overflow:hidden;height:100dvh;}
+  .sx.sx-done .sx-scrollhint,.sx.sx-done .sx-cue{opacity:0;}
+  @media(max-width:880px){
+    .sx-media{width:240px;height:320px;}
+    .sx-title span{font-size:clamp(25px,8vw,40px);}
+    .sx-eyebrow{top:80px;}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .sx-scrollhint span{animation:none;}
+  }
+
   /* reveal */
   .reveal{opacity:0;transform:translateY(30px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1);}
   .reveal.in{opacity:1;transform:none;}
@@ -376,6 +408,24 @@
   <div class="brand"><span class="logo">mellow</span><span class="div"></span><span class="sub">Clinic Sinsa</span></div>
   <a class="nav-cta" href="#contact"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.69 2 10.25c0 2.62 1.5 4.95 3.86 6.48-.13.49-.84 3.04-.87 3.25 0 0-.02.16.08.22.1.06.23.01.23.01.3-.04 3.43-2.24 3.97-2.62.55.08 1.12.12 1.7.12 5.52 0 10-3.69 10-8.25S17.52 2 12 2z"/></svg>LINEで相談</a>
 </header>
+
+<!-- SCROLL-EXPAND INTRO (cinematic interior film) -->
+<section class="sx" id="sxIntro" aria-label="メロウクリニック新沙院 院内">
+  <div class="sx-bg" id="sxBg"><img src="img/hero.jpg" alt="" aria-hidden="true" /></div>
+  <div class="sx-eyebrow"><span class="ovl">Mellow Clinic Sinsa — Interior Film</span></div>
+  <div class="sx-stage">
+    <div class="sx-media" id="sxMedia">
+      <video id="sxVideo" src="img/interior.mp4" poster="img/interior-poster.jpg" autoplay muted loop playsinline preload="auto"></video>
+      <span class="sx-media-ov" id="sxMediaOv"></span>
+      <div class="sx-cue"><span class="ln"></span><span class="tx">scroll to expand</span></div>
+    </div>
+    <h2 class="sx-title">
+      <span class="t1" id="sxT1">韓国皮膚科専門医</span>
+      <span class="t2" id="sxT2">メロウ新沙院</span>
+    </h2>
+  </div>
+  <button class="sx-scrollhint" id="sxHint" type="button" aria-label="続きを見る"><span></span></button>
+</section>
 
 <!-- HERO -->
 <section class="hero">
@@ -656,6 +706,71 @@
     requestAnimationFrame(tick);cio.unobserve(e.target);
   });},{threshold:0.5});
   document.querySelectorAll('.stat .v[data-to]').forEach(el=>cio.observe(el));
+</script>
+
+<!-- scroll-expand intro controller (vanilla port) -->
+<script>
+(function(){
+  const sec=document.getElementById('sxIntro');
+  if(!sec) return;
+  const media=document.getElementById('sxMedia');
+  const bg=document.getElementById('sxBg');
+  const ov=document.getElementById('sxMediaOv');
+  const t1=document.getElementById('sxT1'), t2=document.getElementById('sxT2');
+  const hint=document.getElementById('sxHint');
+  const vid=document.getElementById('sxVideo');
+  let progress=0, expanded=false, touchY=0;
+  const mob=()=>window.innerWidth<768;
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function apply(){
+    const m=mob();
+    media.style.width=(300+progress*(m?620:1250))+'px';
+    media.style.height=(400+progress*(m?220:400))+'px';
+    const tx=progress*(m?72:55);
+    t1.style.transform='translateX(-'+tx+'vw)';
+    t2.style.transform='translateX('+tx+'vw)';
+    bg.style.opacity=String(1-progress);
+    ov.style.opacity=String(Math.max(0,0.5-progress*0.32));
+  }
+  function lock(on){ document.body.classList.toggle('sx-lock', on); }
+  function set(p){
+    progress=Math.min(1,Math.max(0,p));
+    apply();
+    if(progress>=1 && !expanded){ expanded=true; sec.classList.add('sx-done'); lock(false); }
+  }
+  function collapse(){ expanded=false; sec.classList.remove('sx-done'); lock(true); set(0); }
+
+  if(reduce){ set(1); }
+  else { lock(true); apply(); window.scrollTo(0,0); }
+
+  function onWheel(e){
+    if(reduce) return;
+    if(!expanded){ e.preventDefault(); set(progress + e.deltaY*0.0009); }
+    else if(e.deltaY<0 && window.scrollY<=4){ e.preventDefault(); collapse(); }
+  }
+  function onTouchStart(e){ touchY=e.touches[0].clientY; }
+  function onTouchMove(e){
+    if(reduce||!touchY) return;
+    const y=e.touches[0].clientY, d=touchY-y;
+    if(!expanded){ e.preventDefault(); set(progress + d*(d<0?0.0075:0.005)); touchY=y; }
+    else if(d<-24 && window.scrollY<=4){ collapse(); }
+  }
+  function onTouchEnd(){ touchY=0; }
+  function onKey(e){
+    if(reduce||expanded) return;
+    if([' ','Spacebar','ArrowDown','PageDown','Enter'].indexOf(e.key)>-1){ e.preventDefault(); set(1); }
+  }
+
+  window.addEventListener('wheel', onWheel, {passive:false});
+  window.addEventListener('touchstart', onTouchStart, {passive:true});
+  window.addEventListener('touchmove', onTouchMove, {passive:false});
+  window.addEventListener('touchend', onTouchEnd);
+  window.addEventListener('keydown', onKey);
+  window.addEventListener('resize', apply);
+  if(hint) hint.addEventListener('click', ()=>set(1));
+  if(vid){ const p=vid.play&&vid.play(); if(p&&p.catch) p.catch(()=>{}); }
+})();
 </script>
 </body>
 </html>
