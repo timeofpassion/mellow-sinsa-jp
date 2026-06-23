@@ -317,36 +317,31 @@
   .mbar .m-call{background:var(--paper);color:var(--ink);border:1px solid var(--hair);font-family:var(--jp);}
   .mbar svg{width:18px;height:18px;}
 
-  /* scroll-expand intro (cinematic interior film) */
-  .sx{position:relative;z-index:3;min-height:100dvh;overflow:hidden;background:var(--greige);}
-  .sx-bg{position:absolute;inset:0;z-index:0;will-change:opacity;}
-  .sx-bg img{width:100%;height:100%;object-fit:cover;object-position:center;}
-  .sx-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(46,39,34,.14),rgba(46,39,34,.4));}
-  .sx-stage{position:relative;z-index:2;width:100%;height:100dvh;display:flex;align-items:center;justify-content:center;}
-  .sx-media{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:300px;height:400px;max-width:95vw;max-height:84vh;border-radius:16px;overflow:hidden;box-shadow:0 44px 96px -32px rgba(46,39,34,.62);z-index:1;}
-  .sx-media video{width:100%;height:100%;object-fit:cover;display:block;}
-  .sx-media-ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(46,39,34,.16),rgba(46,39,34,.5));opacity:.5;transition:opacity .2s;}
-  .sx-cue{position:absolute;left:0;right:0;bottom:18px;z-index:3;display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.9);pointer-events:none;}
-  .sx-cue .ln{width:1px;height:26px;background:rgba(255,255,255,.55);}
-  .sx-cue .tx{font-size:10.5px;letter-spacing:.34em;text-transform:uppercase;font-family:var(--lat);font-style:italic;}
-  .sx-title{position:relative;z-index:4;display:flex;flex-direction:column;align-items:center;gap:.1em;text-align:center;pointer-events:none;width:100%;}
-  .sx-title span{display:block;font-family:var(--jp);font-weight:600;font-size:clamp(28px,6.2vw,66px);line-height:1.34;white-space:nowrap;will-change:transform;text-shadow:0 2px 22px rgba(251,247,241,.5);}
-  .sx-title .t1{color:var(--ink);}
-  .sx-title .t2{color:var(--rose-deep);font-family:var(--lat);font-style:italic;font-weight:400;letter-spacing:.01em;}
-  .sx-eyebrow{position:absolute;top:104px;left:0;right:0;z-index:4;text-align:center;pointer-events:none;}
-  .sx-eyebrow .ovl{letter-spacing:.42em;}
-  .sx-scrollhint{position:absolute;left:50%;bottom:30px;transform:translateX(-50%);z-index:5;width:24px;height:38px;background:transparent;border:1px solid var(--rose-deep);border-radius:14px;cursor:pointer;display:flex;justify-content:center;padding-top:7px;transition:opacity .4s;}
-  .sx-scrollhint span{width:3px;height:8px;border-radius:2px;background:var(--rose-deep);animation:sxd 1.5s infinite;}
+  /* intro auto-slide carousel (院内ギャラリー) */
+  .intro{position:relative;z-index:3;height:100svh;min-height:580px;overflow:hidden;background:var(--ink);}
+  .intro-track{position:absolute;inset:0;display:flex;height:100%;will-change:transform;}
+  .intro-slide{position:relative;flex:0 0 100%;height:100%;overflow:hidden;}
+  .intro-slide img{width:100%;height:100%;object-fit:cover;object-position:center;transform:scale(1.06);}
+  .intro-slide::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(46,39,34,.22),rgba(46,39,34,.55));}
+  .intro-overlay{position:absolute;inset:0;z-index:4;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;text-align:center;pointer-events:none;padding:0 24px;}
+  .intro-overlay .ovl{color:rgba(255,255,255,.86);letter-spacing:.42em;}
+  .intro-title{display:flex;flex-direction:column;align-items:center;gap:.06em;}
+  .intro-title span{display:block;font-family:var(--jp);font-weight:600;font-size:clamp(30px,6vw,66px);line-height:1.32;white-space:nowrap;text-shadow:0 4px 28px rgba(20,14,10,.55);}
+  .intro-title .t1{color:#fff;}
+  .intro-title .t2{color:#fff;font-family:var(--lat);font-style:italic;font-weight:400;letter-spacing:.01em;}
+  .intro-dots{position:absolute;left:0;right:0;bottom:64px;z-index:5;display:flex;justify-content:center;gap:10px;}
+  .intro-dots span{width:26px;height:2px;background:rgba(255,255,255,.32);transition:background .4s;}
+  .intro-dots span.on{background:rgba(255,255,255,.95);}
+  .sx-scrollhint{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);z-index:6;width:24px;height:38px;background:transparent;border:1px solid rgba(255,255,255,.6);border-radius:14px;cursor:pointer;display:flex;justify-content:center;padding-top:7px;}
+  .sx-scrollhint span{width:3px;height:8px;border-radius:2px;background:rgba(255,255,255,.85);animation:sxd 1.5s infinite;}
   @keyframes sxd{0%{opacity:0;transform:translateY(-4px);}30%{opacity:1;}60%{opacity:1;transform:translateY(6px);}100%{opacity:0;transform:translateY(10px);}}
-  body.sx-lock{overflow:hidden;height:100dvh;}
-  .sx.sx-done .sx-scrollhint,.sx.sx-done .sx-cue{opacity:0;}
   @media(max-width:880px){
-    .sx-media{width:240px;height:320px;}
-    .sx-title span{font-size:clamp(25px,8vw,40px);}
-    .sx-eyebrow{top:80px;}
+    .intro-title span{font-size:clamp(26px,8vw,42px);}
+    .intro-dots{bottom:56px;}
   }
   @media(prefers-reduced-motion:reduce){
     .sx-scrollhint span{animation:none;}
+    .intro-track{transition:none!important;}
   }
 
   /* reveal */
@@ -406,25 +401,27 @@
 <!-- HEADER -->
 <header id="hdr">
   <div class="brand"><span class="logo">mellow</span><span class="div"></span><span class="sub">Clinic Sinsa</span></div>
-  <a class="nav-cta" href="#contact"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.69 2 10.25c0 2.62 1.5 4.95 3.86 6.48-.13.49-.84 3.04-.87 3.25 0 0-.02.16.08.22.1.06.23.01.23.01.3-.04 3.43-2.24 3.97-2.62.55.08 1.12.12 1.7.12 5.52 0 10-3.69 10-8.25S17.52 2 12 2z"/></svg>LINEで相談</a>
 </header>
 
-<!-- SCROLL-EXPAND INTRO (cinematic interior film) -->
-<section class="sx" id="sxIntro" aria-label="メロウクリニック新沙院 院内">
-  <div class="sx-bg" id="sxBg"><img src="img/hero.jpg" alt="" aria-hidden="true" /></div>
-  <div class="sx-eyebrow"><span class="ovl">Mellow Clinic Sinsa — Interior Film</span></div>
-  <div class="sx-stage">
-    <div class="sx-media" id="sxMedia">
-      <video id="sxVideo" src="img/interior.mp4" poster="img/interior-poster.jpg" autoplay muted loop playsinline preload="auto"></video>
-      <span class="sx-media-ov" id="sxMediaOv"></span>
-      <div class="sx-cue"><span class="ln"></span><span class="tx">scroll to expand</span></div>
-    </div>
-    <h2 class="sx-title">
-      <span class="t1" id="sxT1">韓国皮膚科専門医</span>
-      <span class="t2" id="sxT2">メロウ新沙院</span>
+<!-- INTRO AUTO-SLIDE CAROUSEL (院内ギャラリー) -->
+<section class="intro" id="introCarousel" aria-label="メロウクリニック新沙院 院内">
+  <div class="intro-track" id="introTrack">
+    <div class="intro-slide"><img src="img/int01.jpg" alt="メロウクリニック新沙院 院内 1" /></div>
+    <div class="intro-slide"><img src="img/int03.jpg" alt="メロウクリニック新沙院 院内 2" /></div>
+    <div class="intro-slide"><img src="img/int05.jpg" alt="メロウクリニック新沙院 院内 3" /></div>
+    <div class="intro-slide"><img src="img/int08.jpg" alt="メロウクリニック新沙院 院内 4" /></div>
+    <div class="intro-slide"><img src="img/int09.jpg" alt="メロウクリニック新沙院 院内 5" /></div>
+    <div class="intro-slide"><img src="img/int11.jpg" alt="メロウクリニック新沙院 院内 6" /></div>
+  </div>
+  <div class="intro-overlay">
+    <span class="ovl">Mellow Clinic Sinsa — Seoul</span>
+    <h2 class="intro-title">
+      <span class="t1">韓国皮膚科専門医</span>
+      <span class="t2">メロウ新沙院</span>
     </h2>
   </div>
-  <button class="sx-scrollhint" id="sxHint" type="button" aria-label="続きを見る"><span></span></button>
+  <div class="intro-dots" id="introDots" aria-hidden="true"></div>
+  <button class="sx-scrollhint" id="introHint" type="button" aria-label="続きを見る"><span></span></button>
 </section>
 
 <!-- HERO -->
@@ -434,11 +431,12 @@
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <div class="hero-eyebrow reveal"><span class="ovl">韓国 皮膚科専門医</span></div>
-      <h1 class="reveal d1">韓国で肌管理する<br>なら？<em>—</em><span class="u mk">皮膚科専門医</span><br>一択。</h1>
+      <h1 class="reveal d1">韓国で<br>肌管理するなら？<br><span class="u mk">皮膚科専門医</span><br>一択。</h1>
       <p class="lead reveal d2">韓国上位 <span class="lat-it" style="color:var(--rose-deep);font-size:1.15em;">1.5%</span> の皮膚科専門医が、<br>カウンセリングから施術まで一貫して担当。<br>あなたの肌に、誠実な答えを。</p>
       <div class="actions reveal d3">
-        <a class="btn-line" href="#contact"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.69 2 10.25c0 2.62 1.5 4.95 3.86 6.48-.13.49-.84 3.04-.87 3.25 0 0-.02.16.08.22.1.06.23.01.23.01.3-.04 3.43-2.24 3.97-2.62.55.08 1.12.12 1.7.12 5.52 0 10-3.69 10-8.25S17.52 2 12 2z"/></svg>公式LINEで無料相談</a>
+        <a class="btn-line" href="https://lin.ee/vNPCyZS" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.69 2 10.25c0 2.62 1.5 4.95 3.86 6.48-.13.49-.84 3.04-.87 3.25 0 0-.02.16.08.22.1.06.23.01.23.01.3-.04 3.43-2.24 3.97-2.62.55.08 1.12.12 1.7.12 5.52 0 10-3.69 10-8.25S17.52 2 12 2z"/></svg>公式LINEで無料相談</a>
         <a class="btn-ghost" href="#director">院長について <span class="ar">→</span></a>
+        <a class="btn-ghost" href="#treatments">施術について <span class="ar">→</span></a>
       </div>
       <div class="hero-meta reveal d3">
         <div class="m"><b>1.5<small>%</small></b><span>韓国上位の専門医</span></div>
@@ -447,8 +445,9 @@
       </div>
     </div>
     <div class="hero-visual reveal d2">
+      <!-- TODO(카리 제공): 우측 히어로 이미지를 신규 로비 사진으로 교체 예정 (현재 img/hero.jpg 임시) -->
       <div class="arch"><img src="img/hero.jpg" alt="メロウクリニック新沙院 院内" /><span class="cap">メロウクリニック新沙院 院内</span></div>
-      <div class="float"><span class="seal">専門</span><p><b>皮膚科専門医</b>が、相談から施術まで<br>すべて直接担当します。</p></div>
+      <div class="float"><span class="seal">専門</span><p><b>皮膚科専門医</b>が<br>相談から施術まで<br>すべて直接担当します</p></div>
     </div>
   </div>
 </section>
@@ -457,7 +456,7 @@
 <div class="badges">
   <div class="wrap">
     <div class="badge"><span class="bi"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span><div><b>皮膚科専門医</b><span>Board-certified</span></div></div>
-    <div class="badge"><span class="bi"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M6 21c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg></span><div><b>院長が1:1で担当</b><span>Oder-made</span></div></div>
+    <div class="badge"><span class="bi"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M6 21c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg></span><div><b>院長が1:1で担当</b><span>Order-made</span></div></div>
     <div class="badge"><span class="bi"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 8l8-4 8 4"/><path d="M6 12h12"/></svg></span><div><b>KDA・AKD 正会員</b><span>Society member</span></div></div>
     <div class="badge"><span class="bi"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.5 7-11a7 7 0 10-14 0c0 4.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.4"/></svg></span><div><b>新沙駅 徒歩3分</b><span>日本語対応</span></div></div>
   </div>
@@ -465,23 +464,24 @@
 
 <!-- TICKER -->
 <div class="ticker"><div class="run">
-  <span>過剰な施術はしない</span><span>오더메이드 맞춤 진료</span><span>韓国上位 1.5% の皮膚科専門医</span><span>本来の美しさを大切に</span>
-  <span>過剰な施術はしない</span><span>오더메이드 맞춤 진료</span><span>韓国上位 1.5% の皮膚科専門医</span><span>本来の美しさを大切に</span>
+  <span>過剰な施術はしない</span><span>オーダーメイドの診療</span><span>韓国上位 1.5% の皮膚科専門医</span><span>本来の美しさを大切に</span>
+  <span>過剰な施術はしない</span><span>オーダーメイドの診療</span><span>韓国上位 1.5% の皮膚科専門医</span><span>本来の美しさを大切に</span>
 </div></div>
 
 <!-- GALLERY -->
 <section class="gallery pad" id="gallery">
   <div class="wrap sec-top">
-    <div class="l"><span class="ovl reveal">Interior &amp; Treatment</span><h2 class="reveal d1">落ち着いた空間で、<br><em>あなただけ</em>の肌時間を。</h2></div>
-    <p class="r reveal d2">清潔感と上質さにこだわった院内。緊張せず、ゆったりと向き合える空間をご用意しています。</p>
+    <div class="l"><span class="ovl reveal">Interior &amp; Treatment</span><h2 class="reveal d1">落ち着いた空間で、<br>肌と<em>向き合う</em>特別な時間を。</h2></div>
+    <p class="r reveal d2">清潔感と上品さにこだわった院内でリラックスして、ご自身の肌と向き合える空間をご用意しています。</p>
   </div>
   <div class="g-rail">
-    <div class="g-card reveal"><div class="frame"><img src="img/int01.jpg" alt="院内 1"/></div><div class="meta"><span class="n">01</span><span class="t">トリートメントルーム</span></div></div>
-    <div class="g-card reveal d1"><div class="frame"><img src="img/int03.jpg" alt="院内 2"/></div><div class="meta"><span class="n">02</span><span class="t">エントランス / Reception</span></div></div>
-    <div class="g-card reveal d1"><div class="frame"><img src="img/int05.jpg" alt="院内 3"/></div><div class="meta"><span class="n">03</span><span class="t">ラウンジ / Lounge</span></div></div>
-    <div class="g-card reveal d2"><div class="frame"><img src="img/int08.jpg" alt="院内 4"/></div><div class="meta"><span class="n">04</span><span class="t">施術ルーム / Treatment</span></div></div>
-    <div class="g-card reveal d2"><div class="frame"><img src="img/int09.jpg" alt="院内 5"/></div><div class="meta"><span class="n">05</span><span class="t">パウダールーム</span></div></div>
-    <div class="g-card reveal d3"><div class="frame"><img src="img/int11.jpg" alt="院内 6"/></div><div class="meta"><span class="n">06</span><span class="t">院内 / Interior</span></div></div>
+    <!-- TODO(카리 제공): 내부 사진 6장 원본으로 교체 예정 (라벨은 원장 확정안 반영 완료) -->
+    <div class="g-card reveal"><div class="frame"><img src="img/int01.jpg" alt="トリートメントルーム"/></div><div class="meta"><span class="n">01</span><span class="t">トリートメントルーム</span></div></div>
+    <div class="g-card reveal d1"><div class="frame"><img src="img/int03.jpg" alt="ロビー"/></div><div class="meta"><span class="n">02</span><span class="t">ロビー / Lobby</span></div></div>
+    <div class="g-card reveal d1"><div class="frame"><img src="img/int05.jpg" alt="相談室"/></div><div class="meta"><span class="n">03</span><span class="t">相談室 / Counseling</span></div></div>
+    <div class="g-card reveal d2"><div class="frame"><img src="img/int08.jpg" alt="診察室"/></div><div class="meta"><span class="n">04</span><span class="t">診察室 / Examination</span></div></div>
+    <div class="g-card reveal d2"><div class="frame"><img src="img/int09.jpg" alt="パウダールーム"/></div><div class="meta"><span class="n">05</span><span class="t">パウダールーム</span></div></div>
+    <div class="g-card reveal d3"><div class="frame"><img src="img/int11.jpg" alt="インテリア"/></div><div class="meta"><span class="n">06</span><span class="t">インテリア / Interior</span></div></div>
   </div>
   <p class="g-hint reveal">— swipe to explore —</p>
 </section>
@@ -537,13 +537,14 @@
       <span class="ovl reveal" style="display:block;margin-bottom:16px;">人気の施術</span>
       <h2 class="reveal d1">肌悩み別、日本の患者様に<br>選ばれている施術。</h2>
     </div>
+    <!-- TODO(카리 제공): 각 시술 카드에 장비·제품 사진 삽입 예정 (온다/세르프/하이드라톡스/골드PTT/사각턱보톡스) -->
     <div class="t-grid">
-      <div class="t-cell reveal"><div class="t-ico"><svg viewBox="0 0 32 32"><path d="M8 20c0-6 3.5-10 8-10s8 4 8 10"/><path d="M11 22l5-4 5 4"/><path d="M16 6v3"/></svg></div><div class="concern">Sagging</div><div class="tn">オンダリフト<span class="ko">온다리프팅 · たるみ</span></div><p class="td">高周波の熱で肌深部を引き締め、フェイスラインにハリと弾力を。</p></div>
-      <div class="t-cell reveal d1"><div class="t-ico"><svg viewBox="0 0 32 32"><path d="M16 5l2.5 6.5L25 14l-6.5 2.5L16 23l-2.5-6.5L7 14l6.5-2.5z"/></svg></div><div class="concern">Anti-aging</div><div class="tn">ザーフリフティング<span class="ko">자르프 리프팅 · エイジング</span></div><p class="td">年齢サインにアプローチする糸リフト。たるみを土台から持ち上げます。</p></div>
-      <div class="t-cell reveal d2"><div class="t-ico"><svg viewBox="0 0 32 32"><path d="M16 5c4 5 7 8.5 7 12.5A7 7 0 019 17.5C9 13.5 12 10 16 5z"/></svg></div><div class="concern">Hydration</div><div class="tn">ハイドラトックス<span class="ko">하이드라톡스 · 乾燥肌</span></div><p class="td">うるおいと栄養を届け、ゆらぎがちな肌のコンディションを整えます。</p></div>
+      <div class="t-cell reveal"><div class="t-ico"><svg viewBox="0 0 32 32"><path d="M8 20c0-6 3.5-10 8-10s8 4 8 10"/><path d="M11 22l5-4 5 4"/><path d="M16 6v3"/></svg></div><div class="concern">Sagging</div><div class="tn">オンダリフト<span class="ko">온다리프팅 · たるみ</span></div><p class="td">肌の奥にある脂肪層に働きかけて、たるみを引き締めるリフトアップ施術です。</p></div>
+      <div class="t-cell reveal d1"><div class="t-ico"><svg viewBox="0 0 32 32"><path d="M16 5l2.5 6.5L25 14l-6.5 2.5L16 23l-2.5-6.5L7 14l6.5-2.5z"/></svg></div><div class="concern">Anti-aging</div><div class="tn">ザーフリフティング<span class="ko">자르프 리프팅 · アンチエイジング</span></div><p class="td">コラーゲン生成を促し、ハリと弾力を高めるリフティング施術です。</p></div>
+      <div class="t-cell reveal d2"><div class="t-ico"><svg viewBox="0 0 32 32"><path d="M16 5c4 5 7 8.5 7 12.5A7 7 0 019 17.5C9 13.5 12 10 16 5z"/></svg></div><div class="concern">Hydration</div><div class="tn">ハイドラトックス<span class="ko">하이드라톡스 · 乾燥肌</span></div><p class="td">うるおいと栄養を届け、ゆらぎがちな肌のコンディションを根本的に整えます。</p></div>
       <div class="t-cell reveal"><div class="t-ico"><svg viewBox="0 0 32 32"><circle cx="14" cy="14" r="7"/><path d="M19 19l5 5"/><circle cx="14" cy="14" r="2.4"/></svg></div><div class="concern">Pores</div><div class="tn">ゴールドPTT<span class="ko">골드 PTT · 毛穴・ニキビ</span></div><p class="td">毛穴と皮脂トラブルにアプローチ。なめらかで清潔感のある肌印象へ。</p></div>
       <div class="t-cell reveal d1"><div class="t-ico"><svg viewBox="0 0 32 32"><path d="M10 8c0 0 1 3 6 3s6-3 6-3"/><path d="M9 11c0 7 3 13 7 13s7-6 7-13"/></svg></div><div class="concern">Contour</div><div class="tn">エラボトックス<span class="ko">사각턱 보톡스 · 輪郭</span></div><p class="td">張ったエラをやわらげ、すっきりとした小顔ラインを演出します。</p></div>
-      <div class="t-cell cta reveal d2"><div class="tn">あなたに<br>合う施術は？<span class="ko" style="color:rgba(231,223,212,.55)">院長が直接ご提案</span></div><p>肌診断のうえ、最適な組み合わせをご提案します。</p><a class="btn-line" href="#contact"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.69 2 10.25c0 2.62 1.5 4.95 3.86 6.48-.13.49-.84 3.04-.87 3.25 0 0-.02.16.08.22.1.06.23.01.23.01.3-.04 3.43-2.24 3.97-2.62.55.08 1.12.12 1.7.12 5.52 0 10-3.69 10-8.25S17.52 2 12 2z"/></svg>LINEで相談</a></div>
+      <div class="t-cell cta reveal d2"><div class="tn">あなたに<br>合う施術は？<span class="ko" style="color:rgba(231,223,212,.55)">院長が直接ご提案</span></div><p>肌診断のうえ、最適な組み合わせをご提案します。</p><a class="btn-line" href="https://lin.ee/vNPCyZS" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.69 2 10.25c0 2.62 1.5 4.95 3.86 6.48-.13.49-.84 3.04-.87 3.25 0 0-.02.16.08.22.1.06.23.01.23.01.3-.04 3.43-2.24 3.97-2.62.55.08 1.12.12 1.7.12 5.52 0 10-3.69 10-8.25S17.52 2 12 2z"/></svg>LINEで相談</a></div>
     </div>
   </div>
 </section>
@@ -557,31 +558,18 @@
       <h2 class="reveal d1">変化は、<em>結果</em>で語る。</h2>
       <p class="sub reveal d1">実際の症例写真で、施術前後の変化をご確認いただけます。</p>
     </div>
+    <!-- TODO(카리 제공): 골드PTT·사각턱보톡스·하이드라톡스는 전후사진 부재로 제외, 아래 4종(온다/티타늄/울쎄라/목주름필러) 실제 전후사진으로 교체 예정 -->
     <div class="ba-grid">
       <div class="ba-card reveal"><div class="pair"><div class="ph"><div class="slot">写真挿入</div><span>Before</span></div><div class="ph after"><div class="slot">写真挿入</div><span>After</span></div></div><div class="cl">たるみ改善<small>オンダリフト</small></div></div>
-      <div class="ba-card reveal d1"><div class="pair"><div class="ph"><div class="slot">写真挿入</div><span>Before</span></div><div class="ph after"><div class="slot">写真挿入</div><span>After</span></div></div><div class="cl">毛穴・ニキビ<small>ゴールドPTT</small></div></div>
-      <div class="ba-card reveal d2"><div class="pair"><div class="ph"><div class="slot">写真挿入</div><span>Before</span></div><div class="ph after"><div class="slot">写真挿入</div><span>After</span></div></div><div class="cl">輪郭<small>エラボトックス</small></div></div>
-      <div class="ba-card reveal d3"><div class="pair"><div class="ph"><div class="slot">写真挿入</div><span>Before</span></div><div class="ph after"><div class="slot">写真挿入</div><span>After</span></div></div><div class="cl">乾燥肌<small>ハイドラトックス</small></div></div>
+      <div class="ba-card reveal d1"><div class="pair"><div class="ph"><div class="slot">写真挿入</div><span>Before</span></div><div class="ph after"><div class="slot">写真挿入</div><span>After</span></div></div><div class="cl">タイトニング・美白<small>チタニウム</small></div></div>
+      <div class="ba-card reveal d2"><div class="pair"><div class="ph"><div class="slot">写真挿入</div><span>Before</span></div><div class="ph after"><div class="slot">写真挿入</div><span>After</span></div></div><div class="cl">アンチエイジング<small>ウルセラ</small></div></div>
+      <div class="ba-card reveal d3"><div class="pair"><div class="ph"><div class="slot">写真挿入</div><span>Before</span></div><div class="ph after"><div class="slot">写真挿入</div><span>After</span></div></div><div class="cl">シワ改善<small>首のシワフィラー</small></div></div>
     </div>
     <p class="ba-note">※ 同意を得た実際の症例写真を掲載してください。効果には個人差があり、すべての方に同様の結果を保証するものではありません。（医療広告ガイドライン準拠の表記が必要です）</p>
   </div>
 </section>
 
-<!-- REVIEWS -->
-<section class="reviews pad" id="reviews">
-  <div class="wrap">
-    <div class="sec-top">
-      <div class="l"><span class="ovl reveal">Patient Voice — 患者様の声</span><h2 class="reveal d1">日本から来院された<br>患者様の<em>リアルな声</em>。</h2></div>
-      <p class="r reveal d2">言葉が通じるか、初めての韓国で不安はないか——実際に来院された日本の患者様の声をご紹介します。</p>
-    </div>
-    <div class="rv-grid">
-      <div class="rv-card reveal"><span class="src">Google</span><div class="stars">★★★★★</div><p class="rq">（実際の口コミをここに掲載予定）日本語で相談から施術まで対応してもらえて安心でした。先生が一つひとつ丁寧に説明してくれます。</p><div class="ru"><span class="av">Y</span><div><b>日本人患者様</b><span>東京都 ・ 30代</span></div></div></div>
-      <div class="rv-card reveal d1"><span class="src">LINE</span><div class="stars">★★★★★</div><p class="rq">（実際の口コミをここに掲載予定）過剰に勧められることがなく、本当に必要な施術だけを提案してくれました。新沙駅から近くて通いやすい。</p><div class="ru"><span class="av">M</span><div><b>日本人患者様</b><span>大阪府 ・ 40代</span></div></div></div>
-      <div class="rv-card reveal d2"><span class="src">Review</span><div class="stars">★★★★★</div><p class="rq">（実際の口コミをここに掲載予定）皮膚科専門医の先生が担当してくれるのが決め手でした。肌の状態に合わせた提案が的確でした。</p><div class="ru"><span class="av">A</span><div><b>日本人患者様</b><span>福岡県 ・ 20代</span></div></div></div>
-    </div>
-    <p class="ba-note" style="margin-top:24px;">※ 実際の口コミ・レビュー（Google／LINE／SNS等）に差し替えてください。患者様の体験談掲載は同意取得と医療広告ガイドラインの確認が必要です。</p>
-  </div>
-</section>
+<!-- REVIEWS 섹션: 원장 요청으로 삭제(사용 가능한 리뷰 캡처본 없음). 추후 실제 후기 확보 시 복원 -->
 
 <!-- FLOW -->
 <section class="flow pad" id="flow">
@@ -622,7 +610,7 @@
         <li><span class="ck">✓</span><span><b>LINE友だち登録特典</b>（◯◯ ／ 内容は確定後に設定）</span></li>
         <li><span class="ck">✓</span><span><b>人気施術の特別ご優待</b>（◯◯%OFF ／ 金額は確定後に設定）</span></li>
       </ul>
-      <a class="btn-line" href="#contact"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.69 2 10.25c0 2.62 1.5 4.95 3.86 6.48-.13.49-.84 3.04-.87 3.25 0 0-.02.16.08.22.1.06.23.01.23.01.3-.04 3.43-2.24 3.97-2.62.55.08 1.12.12 1.7.12 5.52 0 10-3.69 10-8.25S17.52 2 12 2z"/></svg>LINEで特典を受け取る</a>
+      <a class="btn-line" href="https://lin.ee/vNPCyZS" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.69 2 10.25c0 2.62 1.5 4.95 3.86 6.48-.13.49-.84 3.04-.87 3.25 0 0-.02.16.08.22.1.06.23.01.23.01.3-.04 3.43-2.24 3.97-2.62.55.08 1.12.12 1.7.12 5.52 0 10-3.69 10-8.25S17.52 2 12 2z"/></svg>LINEで特典を受け取る</a>
       <p class="fill-note">※ 特典内容・割引率・限定人数は確定後に差し替えてください（医療広告ガイドライン確認要）</p>
     </div>
   </div>
@@ -663,9 +651,9 @@
         <span class="lat-it">Free Counseling</span>
         <h3>まずは、お気軽に<br>ご相談ください。</h3>
         <p>当院 公式LINE にて、ご予約・ご相談を承っております。日本語でどうぞ。</p>
-        <div class="qr"><div class="qrbox"></div><small>LINE QR（設定要）</small></div>
-        <a class="btn-line" href="#" id="lineCta"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.69 2 10.25c0 2.62 1.5 4.95 3.86 6.48-.13.49-.84 3.04-.87 3.25 0 0-.02.16.08.22.1.06.23.01.23.01.3-.04 3.43-2.24 3.97-2.62.55.08 1.12.12 1.7.12 5.52 0 10-3.69 10-8.25S17.52 2 12 2z"/></svg>公式LINEで相談・予約</a>
-        <p class="micro">LINE ID / リンクは公開前に設定してください</p>
+        <div class="qr"><img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&margin=0&data=https%3A%2F%2Flin.ee%2FvNPCyZS" alt="公式LINE QRコード" style="width:74px;height:74px;border-radius:4px;" /><small>公式LINE QR</small></div>
+        <a class="btn-line" href="https://lin.ee/vNPCyZS" target="_blank" rel="noopener" id="lineCta"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.69 2 10.25c0 2.62 1.5 4.95 3.86 6.48-.13.49-.84 3.04-.87 3.25 0 0-.02.16.08.22.1.06.23.01.23.01.3-.04 3.43-2.24 3.97-2.62.55.08 1.12.12 1.7.12 5.52 0 10-3.69 10-8.25S17.52 2 12 2z"/></svg>公式LINEで相談・予約</a>
+        <p class="micro">LINE: lin.ee/vNPCyZS</p>
       </div>
     </div>
   </div>
@@ -682,10 +670,10 @@
 </footer>
 
 <!-- FLOATING + MOBILE -->
-<a class="float-line" href="#contact"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.69 2 10.25c0 2.62 1.5 4.95 3.86 6.48-.13.49-.84 3.04-.87 3.25 0 0-.02.16.08.22.1.06.23.01.23.01.3-.04 3.43-2.24 3.97-2.62.55.08 1.12.12 1.7.12 5.52 0 10-3.69 10-8.25S17.52 2 12 2z"/></svg>LINEで無料相談</a>
+<a class="float-line" href="https://lin.ee/vNPCyZS" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.69 2 10.25c0 2.62 1.5 4.95 3.86 6.48-.13.49-.84 3.04-.87 3.25 0 0-.02.16.08.22.1.06.23.01.23.01.3-.04 3.43-2.24 3.97-2.62.55.08 1.12.12 1.7.12 5.52 0 10-3.69 10-8.25S17.52 2 12 2z"/></svg>LINEで無料相談</a>
 <div class="mbar">
   <a class="m-call" href="#director">院長を見る</a>
-  <a class="m-line" href="#contact"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.69 2 10.25c0 2.62 1.5 4.95 3.86 6.48-.13.49-.84 3.04-.87 3.25 0 0-.02.16.08.22.1.06.23.01.23.01.3-.04 3.43-2.24 3.97-2.62.55.08 1.12.12 1.7.12 5.52 0 10-3.69 10-8.25S17.52 2 12 2z"/></svg>LINEで無料相談</a>
+  <a class="m-line" href="https://lin.ee/vNPCyZS" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.69 2 10.25c0 2.62 1.5 4.95 3.86 6.48-.13.49-.84 3.04-.87 3.25 0 0-.02.16.08.22.1.06.23.01.23.01.3-.04 3.43-2.24 3.97-2.62.55.08 1.12.12 1.7.12 5.52 0 10-3.69 10-8.25S17.52 2 12 2z"/></svg>LINEで無料相談</a>
 </div>
 
 <script>
@@ -708,68 +696,58 @@
   document.querySelectorAll('.stat .v[data-to]').forEach(el=>cio.observe(el));
 </script>
 
-<!-- scroll-expand intro controller (vanilla port) -->
+<!-- intro auto-slide carousel controller -->
 <script>
 (function(){
-  const sec=document.getElementById('sxIntro');
-  if(!sec) return;
-  const media=document.getElementById('sxMedia');
-  const bg=document.getElementById('sxBg');
-  const ov=document.getElementById('sxMediaOv');
-  const t1=document.getElementById('sxT1'), t2=document.getElementById('sxT2');
-  const hint=document.getElementById('sxHint');
-  const vid=document.getElementById('sxVideo');
-  let progress=0, expanded=false, touchY=0;
-  const mob=()=>window.innerWidth<768;
+  const track=document.getElementById('introTrack');
+  if(!track) return;
+  const slides=Array.prototype.slice.call(track.children);
+  const total=slides.length;
+  if(total<2) return;
   const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  function apply(){
-    const m=mob();
-    media.style.width=(300+progress*(m?620:1250))+'px';
-    media.style.height=(400+progress*(m?220:400))+'px';
-    const tx=progress*(m?72:55);
-    t1.style.transform='translateX(-'+tx+'vw)';
-    t2.style.transform='translateX('+tx+'vw)';
-    bg.style.opacity=String(1-progress);
-    ov.style.opacity=String(Math.max(0,0.5-progress*0.32));
-  }
-  function lock(on){ document.body.classList.toggle('sx-lock', on); }
-  function set(p){
-    progress=Math.min(1,Math.max(0,p));
-    apply();
-    if(progress>=1 && !expanded){ expanded=true; sec.classList.add('sx-done'); lock(false); }
-  }
-  function collapse(){ expanded=false; sec.classList.remove('sx-done'); lock(true); set(0); }
+  // 무한 루프용 첫 슬라이드 클론을 끝에 추가
+  track.appendChild(slides[0].cloneNode(true));
 
-  if(reduce){ set(1); }
-  else { lock(true); apply(); window.scrollTo(0,0); }
-
-  function onWheel(e){
-    if(reduce) return;
-    if(!expanded){ e.preventDefault(); set(progress + e.deltaY*0.0009); }
-    else if(e.deltaY<0 && window.scrollY<=4){ e.preventDefault(); collapse(); }
-  }
-  function onTouchStart(e){ touchY=e.touches[0].clientY; }
-  function onTouchMove(e){
-    if(reduce||!touchY) return;
-    const y=e.touches[0].clientY, d=touchY-y;
-    if(!expanded){ e.preventDefault(); set(progress + d*(d<0?0.0075:0.005)); touchY=y; }
-    else if(d<-24 && window.scrollY<=4){ collapse(); }
-  }
-  function onTouchEnd(){ touchY=0; }
-  function onKey(e){
-    if(reduce||expanded) return;
-    if([' ','Spacebar','ArrowDown','PageDown','Enter'].indexOf(e.key)>-1){ e.preventDefault(); set(1); }
+  // 인디케이터(dots) 생성
+  const dotsBox=document.getElementById('introDots');
+  const dots=[];
+  for(let k=0;k<total;k++){
+    const b=document.createElement('span');
+    if(k===0) b.className='on';
+    dotsBox.appendChild(b); dots.push(b);
   }
 
-  window.addEventListener('wheel', onWheel, {passive:false});
-  window.addEventListener('touchstart', onTouchStart, {passive:true});
-  window.addEventListener('touchmove', onTouchMove, {passive:false});
-  window.addEventListener('touchend', onTouchEnd);
-  window.addEventListener('keydown', onKey);
-  window.addEventListener('resize', apply);
-  if(hint) hint.addEventListener('click', ()=>set(1));
-  if(vid){ const p=vid.play&&vid.play(); if(p&&p.catch) p.catch(()=>{}); }
+  let i=0, timer=null;
+  const SPEED=4500; // 4.5초 간격
+
+  function render(animate){
+    track.style.transition = animate ? 'transform 1.1s cubic-bezier(.7,0,.2,1)' : 'none';
+    track.style.transform='translateX(-'+(i*100)+'%)';
+    dots.forEach((d,k)=>d.classList.toggle('on', k===(i%total)));
+  }
+  function next(){
+    i++;
+    render(true);
+    if(i===total){ // 클론 도달 → 트랜지션 후 처음으로 점프
+      setTimeout(function(){ i=0; render(false); }, 1150);
+    }
+  }
+  function start(){ if(!reduce){ stop(); timer=setInterval(next, SPEED); } }
+  function stop(){ if(timer){ clearInterval(timer); timer=null; } }
+
+  render(false);
+  start();
+
+  // 탭 비활성 시 멈춤(리소스 절약)
+  document.addEventListener('visibilitychange', function(){ document.hidden ? stop() : start(); });
+
+  // 스크롤 힌트 → 본문으로 부드럽게 이동
+  const hint=document.getElementById('introHint');
+  if(hint) hint.addEventListener('click', function(){
+    const hero=document.querySelector('.hero');
+    if(hero) hero.scrollIntoView({behavior:'smooth'});
+  });
 })();
 </script>
 </body>
