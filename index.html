@@ -193,6 +193,9 @@
   .t-cell:hover .t-ico{background:var(--rose);}
   .t-ico svg{width:28px;height:28px;stroke:var(--rose-deep);fill:none;stroke-width:1.3;transition:stroke .4s;}
   .t-cell:hover .t-ico svg{stroke:#fff;}
+  .t-photo{width:100%;aspect-ratio:4/3;border-radius:3px;overflow:hidden;margin-bottom:22px;background:#fff;border:1px solid var(--hair-soft);}
+  .t-photo img{width:100%;height:100%;object-fit:contain;padding:12px;transition:transform .5s cubic-bezier(.2,.7,.2,1);}
+  .t-cell:hover .t-photo img{transform:scale(1.05);}
   .t-cell .concern{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);font-family:var(--lat);font-style:italic;margin-bottom:8px;}
   .t-cell .tn{font-family:var(--jp);font-size:21px;font-weight:600;color:var(--ink);}
   .t-cell .tn .ko{display:block;font-family:var(--sans);font-size:11.5px;font-weight:400;color:var(--taupe);margin-top:5px;letter-spacing:.03em;}
@@ -204,7 +207,9 @@
 
   /* before/after */
   .ba{background:var(--paper);}
-  .ba-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  .ba-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+  .ba-card .ba-img{border-radius:4px;overflow:hidden;box-shadow:var(--shadow-sm);background:#EDE4D8;}
+  .ba-card .ba-img img{width:100%;height:auto;display:block;}
   .ba-card .pair{display:grid;grid-template-columns:1fr 1fr;gap:3px;border-radius:4px;overflow:hidden;box-shadow:var(--shadow-sm);}
   .ba-card .pair .ph{aspect-ratio:3/4;position:relative;background:linear-gradient(160deg,#DAC8B4,#B89A82);display:flex;align-items:flex-end;}
   .ba-card .pair .ph span{font-family:var(--lat);font-style:italic;font-size:12px;color:#fff;padding:10px 12px;letter-spacing:.04em;}
@@ -354,7 +359,7 @@
     .badge:nth-child(2){border-right:none;}
     .badge:nth-child(1),.badge:nth-child(2){border-bottom:1px solid var(--hair-soft);}
     .cred-cols{grid-template-columns:1fr;gap:26px;}
-    .ba-grid{grid-template-columns:repeat(2,1fr);}
+    .ba-grid{grid-template-columns:1fr;gap:20px;}
     .rv-grid{grid-template-columns:1fr;}
     .flow-grid{grid-template-columns:repeat(2,1fr);}
     .stats .wrap{grid-template-columns:repeat(2,1fr);}
@@ -386,7 +391,7 @@
     .wrap{padding:0 20px;}
     .hero-meta{flex-wrap:wrap;gap:14px 0;}
     .hero-meta .m{padding-right:18px;margin-right:18px;}
-    .ba-grid{grid-template-columns:1fr 1fr;gap:12px;}
+    .ba-grid{grid-template-columns:1fr;gap:16px;}
     .flow-grid{grid-template-columns:1fr;}
     .stats .wrap{grid-template-columns:1fr 1fr;}
     .acc-info,.acc-cta,.ev-card{padding:34px 24px;}
@@ -445,8 +450,8 @@
       </div>
     </div>
     <div class="hero-visual reveal d2">
-      <!-- TODO(카리 제공): 우측 히어로 이미지를 신규 로비 사진으로 교체 예정 (현재 img/hero.jpg 임시) -->
-      <div class="arch"><img src="img/hero.jpg" alt="メロウクリニック新沙院 院内" /><span class="cap">メロウクリニック新沙院 院内</span></div>
+      <!-- 우측 히어로: 신규 로비 사진 반영 완료 (2026-06-27) -->
+      <div class="arch"><img src="img/hero.jpg" alt="メロウクリニック新沙院 ロビー" /><span class="cap">メロウクリニック新沙院 ロビー</span></div>
       <div class="float"><span class="seal">専門</span><p><b>皮膚科専門医</b>が<br>相談から施術まで<br>すべて直接担当します</p></div>
     </div>
   </div>
@@ -475,7 +480,7 @@
     <p class="r reveal d2">清潔感と上品さにこだわった院内でリラックスして、ご自身の肌と向き合える空間をご用意しています。</p>
   </div>
   <div class="g-rail">
-    <!-- TODO(카리 제공): 내부 사진 6장 원본으로 교체 예정 (라벨은 원장 확정안 반영 완료) -->
+    <!-- 내부 사진 6장 원본 반영 완료 (2026-06-27): 01트리트먼트룸/02로비/03상담실/04진료실/05파우더룸/06인테리어. int01은 가상투어 UI 크롭 제거 -->
     <div class="g-card reveal"><div class="frame"><img src="img/int01.jpg" alt="トリートメントルーム"/></div><div class="meta"><span class="n">01</span><span class="t">トリートメントルーム</span></div></div>
     <div class="g-card reveal d1"><div class="frame"><img src="img/int03.jpg" alt="ロビー"/></div><div class="meta"><span class="n">02</span><span class="t">ロビー / Lobby</span></div></div>
     <div class="g-card reveal d1"><div class="frame"><img src="img/int05.jpg" alt="相談室"/></div><div class="meta"><span class="n">03</span><span class="t">相談室 / Counseling</span></div></div>
@@ -537,13 +542,13 @@
       <span class="ovl reveal" style="display:block;margin-bottom:16px;">人気の施術</span>
       <h2 class="reveal d1">肌悩み別、日本の患者様に<br>選ばれている施術。</h2>
     </div>
-    <!-- TODO(카리 제공): 각 시술 카드에 장비·제품 사진 삽입 예정 (온다/세르프/하이드라톡스/골드PTT/사각턱보톡스) -->
+    <!-- 각 시술 카드 장비·제품 사진 반영 완료 (2026-06-27): 온다/XERF(세르프)/하이드라톡스/골드PTT/XEOMIN(사각턱보톡스) -->
     <div class="t-grid">
-      <div class="t-cell reveal"><div class="t-ico"><svg viewBox="0 0 32 32"><path d="M8 20c0-6 3.5-10 8-10s8 4 8 10"/><path d="M11 22l5-4 5 4"/><path d="M16 6v3"/></svg></div><div class="concern">Sagging</div><div class="tn">オンダリフト<span class="ko">온다리프팅 · たるみ</span></div><p class="td">肌の奥にある脂肪層に働きかけて、たるみを引き締めるリフトアップ施術です。</p></div>
-      <div class="t-cell reveal d1"><div class="t-ico"><svg viewBox="0 0 32 32"><path d="M16 5l2.5 6.5L25 14l-6.5 2.5L16 23l-2.5-6.5L7 14l6.5-2.5z"/></svg></div><div class="concern">Anti-aging</div><div class="tn">ザーフリフティング<span class="ko">자르프 리프팅 · アンチエイジング</span></div><p class="td">コラーゲン生成を促し、ハリと弾力を高めるリフティング施術です。</p></div>
-      <div class="t-cell reveal d2"><div class="t-ico"><svg viewBox="0 0 32 32"><path d="M16 5c4 5 7 8.5 7 12.5A7 7 0 019 17.5C9 13.5 12 10 16 5z"/></svg></div><div class="concern">Hydration</div><div class="tn">ハイドラトックス<span class="ko">하이드라톡스 · 乾燥肌</span></div><p class="td">うるおいと栄養を届け、ゆらぎがちな肌のコンディションを根本的に整えます。</p></div>
-      <div class="t-cell reveal"><div class="t-ico"><svg viewBox="0 0 32 32"><circle cx="14" cy="14" r="7"/><path d="M19 19l5 5"/><circle cx="14" cy="14" r="2.4"/></svg></div><div class="concern">Pores</div><div class="tn">ゴールドPTT<span class="ko">골드 PTT · 毛穴・ニキビ</span></div><p class="td">毛穴と皮脂トラブルにアプローチ。なめらかで清潔感のある肌印象へ。</p></div>
-      <div class="t-cell reveal d1"><div class="t-ico"><svg viewBox="0 0 32 32"><path d="M10 8c0 0 1 3 6 3s6-3 6-3"/><path d="M9 11c0 7 3 13 7 13s7-6 7-13"/></svg></div><div class="concern">Contour</div><div class="tn">エラボトックス<span class="ko">사각턱 보톡스 · 輪郭</span></div><p class="td">張ったエラをやわらげ、すっきりとした小顔ラインを演出します。</p></div>
+      <div class="t-cell reveal"><div class="t-photo"><img src="img/tr-onda.jpg" alt="オンダリフト 施術機器（ONDA）" loading="lazy"/></div><div class="concern">Sagging</div><div class="tn">オンダリフト<span class="ko">온다리프팅 · たるみ</span></div><p class="td">肌の奥にある脂肪層に働きかけて、たるみを引き締めるリフトアップ施術です。</p></div>
+      <div class="t-cell reveal d1"><div class="t-photo"><img src="img/tr-xerf.jpg" alt="ザーフリフティング 施術機器（XERF）" loading="lazy"/></div><div class="concern">Anti-aging</div><div class="tn">ザーフリフティング<span class="ko">자르프 리프팅 · アンチエイジング</span></div><p class="td">コラーゲン生成を促し、ハリと弾力を高めるリフティング施術です。</p></div>
+      <div class="t-cell reveal d2"><div class="t-photo"><img src="img/tr-hydra.jpg" alt="ハイドラトックス 施術製品" loading="lazy"/></div><div class="concern">Hydration</div><div class="tn">ハイドラトックス<span class="ko">하이드라톡스 · 乾燥肌</span></div><p class="td">うるおいと栄養を届け、ゆらぎがちな肌のコンディションを根本的に整えます。</p></div>
+      <div class="t-cell reveal"><div class="t-photo"><img src="img/tr-gold.jpg" alt="ゴールドPTT 施術製品" loading="lazy"/></div><div class="concern">Pores</div><div class="tn">ゴールドPTT<span class="ko">골드 PTT · 毛穴・ニキビ</span></div><p class="td">毛穴と皮脂トラブルにアプローチ。なめらかで清潔感のある肌印象へ。</p></div>
+      <div class="t-cell reveal d1"><div class="t-photo"><img src="img/tr-botox.jpg" alt="エラボトックス 施術製品（XEOMIN）" loading="lazy"/></div><div class="concern">Contour</div><div class="tn">エラボトックス<span class="ko">사각턱 보톡스 · 輪郭</span></div><p class="td">張ったエラをやわらげ、すっきりとした小顔ラインを演出します。</p></div>
       <div class="t-cell cta reveal d2"><div class="tn">あなたに<br>合う施術は？<span class="ko" style="color:rgba(231,223,212,.55)">院長が直接ご提案</span></div><p>肌診断のうえ、最適な組み合わせをご提案します。</p><a class="btn-line" href="https://lin.ee/vNPCyZS" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 5.69 2 10.25c0 2.62 1.5 4.95 3.86 6.48-.13.49-.84 3.04-.87 3.25 0 0-.02.16.08.22.1.06.23.01.23.01.3-.04 3.43-2.24 3.97-2.62.55.08 1.12.12 1.7.12 5.52 0 10-3.69 10-8.25S17.52 2 12 2z"/></svg>LINEで相談</a></div>
     </div>
   </div>
@@ -558,12 +563,12 @@
       <h2 class="reveal d1">変化は、<em>結果</em>で語る。</h2>
       <p class="sub reveal d1">実際の症例写真で、施術前後の変化をご確認いただけます。</p>
     </div>
-    <!-- TODO(카리 제공): 골드PTT·사각턱보톡스·하이드라톡스는 전후사진 부재로 제외, 아래 4종(온다/티타늄/울쎄라/목주름필러) 실제 전후사진으로 교체 예정 -->
+    <!-- 비포애프터 실제 전후사진 4종 반영 완료 (2026-06-27): 온다/티타늄/울쎄라/목주름필러. 좌우 결합형(Before/After 라벨 내장) -->
     <div class="ba-grid">
-      <div class="ba-card reveal"><div class="pair"><div class="ph"><div class="slot">写真挿入</div><span>Before</span></div><div class="ph after"><div class="slot">写真挿入</div><span>After</span></div></div><div class="cl">たるみ改善<small>オンダリフト</small></div></div>
-      <div class="ba-card reveal d1"><div class="pair"><div class="ph"><div class="slot">写真挿入</div><span>Before</span></div><div class="ph after"><div class="slot">写真挿入</div><span>After</span></div></div><div class="cl">タイトニング・美白<small>チタニウム</small></div></div>
-      <div class="ba-card reveal d2"><div class="pair"><div class="ph"><div class="slot">写真挿入</div><span>Before</span></div><div class="ph after"><div class="slot">写真挿入</div><span>After</span></div></div><div class="cl">アンチエイジング<small>ウルセラ</small></div></div>
-      <div class="ba-card reveal d3"><div class="pair"><div class="ph"><div class="slot">写真挿入</div><span>Before</span></div><div class="ph after"><div class="slot">写真挿入</div><span>After</span></div></div><div class="cl">シワ改善<small>首のシワフィラー</small></div></div>
+      <div class="ba-card reveal"><div class="ba-img"><img src="img/ba-onda.jpg" alt="オンダリフト 症例写真（施術前後）" loading="lazy"/></div><div class="cl">たるみ改善<small>オンダリフト</small></div></div>
+      <div class="ba-card reveal d1"><div class="ba-img"><img src="img/ba-titanium.jpg" alt="チタニウム 症例写真（施術前後）" loading="lazy"/></div><div class="cl">タイトニング・美白<small>チタニウム</small></div></div>
+      <div class="ba-card reveal d2"><div class="ba-img"><img src="img/ba-ulthera.jpg" alt="ウルセラ 症例写真（施術前後）" loading="lazy"/></div><div class="cl">アンチエイジング<small>ウルセラ</small></div></div>
+      <div class="ba-card reveal d3"><div class="ba-img"><img src="img/ba-neck.jpg" alt="首のシワフィラー 症例写真（施術前後）" loading="lazy"/></div><div class="cl">シワ改善<small>首のシワフィラー</small></div></div>
     </div>
     <p class="ba-note">※ 同意を得た実際の症例写真を掲載してください。効果には個人差があり、すべての方に同様の結果を保証するものではありません。（医療広告ガイドライン準拠の表記が必要です）</p>
   </div>
